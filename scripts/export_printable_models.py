@@ -3,7 +3,7 @@ from typing import Any, Callable, Final, Optional, Self
 from pathlib import Path
 
 import freecad
-
+import Mesh
 
 @dataclass(kw_only=True)
 class ModelRecord:
@@ -74,6 +74,7 @@ def is_printable(o: Any) -> bool:
 
 def _start():
     repo_dir: Final = Path(__file__).resolve().parent.parent
+    artifacts_dir = repo_dir / "artifacts"
     print(f"{repo_dir=}")
 
     botix = open_document(repo_dir / "botix.fcstd")
@@ -107,7 +108,7 @@ def _start():
         if linked_label in model_record_registry:
             model_record_registry[linked_label].instances += 1
 
-    # 3. export stp models
+    # 3. export STL models
 
     print('\n'.join((
         f"{k} : {v}"
@@ -115,7 +116,10 @@ def _start():
     )))
 
     for record in model_record_registry.values():
-        record.shape.exportStep(str(repo_dir / f"artifacts/{record.label}.stp"))
+        # record.shape.exportStep(str(artifacts_dir / f"{record.label}.stp"))
+        stl_path = artifacts_dir / f"{record.label}.stl"
+        Mesh.Mesh(record.shape.tessellate(0.01)).write(str(stl_path))
+        print(f"Exported: {record.label} (Instances: {record.instances})")
 
     return
 
