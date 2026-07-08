@@ -86,7 +86,7 @@ def _start():
     )
 
     successful_records = filter(
-        None.__ne__, 
+        (lambda r: r is not None), 
         map(ModelRecord.from_freecad_object, printable_objects)
     )
 
@@ -115,7 +115,7 @@ def _start():
     )))
 
     for record in model_record_registry.values():
-        record.shape.exportStep(str(repo_dir / f"artifacts/auto/{record.label}.stp"))
+        record.shape.exportStep(str(repo_dir / f"artifacts/{record.label}.stp"))
 
     return
 
