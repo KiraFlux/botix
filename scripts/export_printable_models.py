@@ -3,7 +3,6 @@ from typing import Any, Callable, Final, Optional, Self
 from pathlib import Path
 
 import freecad
-import Mesh
 
 @dataclass(kw_only=True)
 class ModelRecord:
@@ -116,10 +115,7 @@ def _start():
     )))
 
     for record in model_record_registry.values():
-        # record.shape.exportStep(str(artifacts_dir / f"{record.label}.stp"))
-        stl_path = artifacts_dir / f"{record.label}.stl"
-        Mesh.Mesh(record.shape.tessellate(0.01)).write(str(stl_path))
-        print(f"Exported: {record.label} (Instances: {record.instances})")
+        record.shape.exportStep(str(artifacts_dir / f"{record.label}.stp"))
 
     return
 
