@@ -35,11 +35,19 @@ private:
     Dependencies const _deps;
 
     // TODO: use Kind's Repr
-    cli::Argument::Enum::Item unit_kinds[4]{
+    cli::Argument::Enum::Item const unit_kinds[4]{
         {{.name{"wheel_motor"}}, unit::Kind::WheelMotor},
         {{.name{"servo"}}, unit::Kind::Servo},
         {{.name{"lidar"}}, unit::Kind::Lidar},
         {{.name{"wheel_encoder"}}, unit::Kind::WheelEncoder},
+    };
+
+    // TODO: use Kind's Repr
+    cli::Argument::Enum::Item const lidar_strategies[4]{
+        {{.name{"pass"}}, unit::LidarUnit::Strategy::Pass},
+        {{.name{"nearest"}}, unit::LidarUnit::Strategy::Nearest},
+        {{.name{"furthest"}}, unit::LidarUnit::Strategy::Furthest},
+        {{.name{"lpf"}}, unit::LidarUnit::Strategy::LPF},
     };
 
     cli::Argument unit_related_command_args[2]{
@@ -53,6 +61,13 @@ private:
                 .params{.default_value{0}},
                 .min_value{0},
             },
+        },
+    };
+
+    cli::Argument lidar_strategy_command_args[1]{
+        {
+            {.name{"strategy"}},
+            cli::Argument::Enum{.items{lidar_strategies}},
         },
     };
 
@@ -87,6 +102,7 @@ private:
         init_group(registry.wheel_encoder);
         init_group(registry.servo);
 
+        registry.lidar.parameters() = _deps.user_config.boot.lidar;
         if (_deps.user_config.boot.init_lidar) {
             registry.lidar.init();
         }
@@ -131,6 +147,14 @@ private:
             show_units(registry.servo);
             show_units(registry.wheel_encoder);
             context.channel.output.print("  {} : {}", registry.lidar, unit::Unit::stateName(registry.lidar.state()));
+        });
+
+        (void) group.addCommand(arena, {.name{"lidar_strategy"}, .shortcut{'y'}}, lidar_strategy_command_args, [this](cli::Command::Context const &context) -> void {
+            auto const target_strategy = context.arguments[0].enumValue<driver::sensor::Lidar::Parameters::Strategy>();
+            auto const target_strategy_name = context.arguments[0].enumName();
+
+            registry.lidar.parameters().strategy = target_strategy;
+            context.channel.output.print("lidar strategy set to '{}'", target_strategy_name);            
         });
     }
 

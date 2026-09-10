@@ -8,6 +8,7 @@
 #include "botix/service/MixerService.hpp"
 #include "botix/unit/ServoUnit.hpp"
 #include "botix/unit/WheelMotorUnit.hpp"
+#include "botix/unit/LidarUnit.hpp"
 
 #include "botix/behavior/Behavior.hpp"
 
@@ -15,7 +16,15 @@ namespace botix::behavior {
 
 struct OperationalBehavior : Behavior {
 
+    struct Config {
+        unit::LidarUnit::Strategy 
+            moving_lidar_strategy{unit::LidarUnit::Strategy::Nearest},
+            stopped_lidar_strategy{unit::LidarUnit::Strategy::LPF};
+    };
+
     struct Dependencies {
+        Config const &config;
+
         service::MixerService::Dependencies mixer_service;
 
         unit::WheelMotorUnit
@@ -25,6 +34,8 @@ struct OperationalBehavior : Behavior {
         unit::ServoUnit
             &servo_claw,
             &servo_arm;
+        
+        unit::LidarUnit &lidar;
     };
 
     explicit constexpr OperationalBehavior(Dependencies const &deps) noexcept :
@@ -43,6 +54,8 @@ struct OperationalBehavior : Behavior {
         _mixer_service.poll(now);
 
         auto const &output = _mixer_service.output();
+
+        _deps.lidar.parameters().strategy = output.moving() ? _deps.config.moving_lidar_strategy : _deps.config.stopped_lidar_strategy;
 
         _deps.wheel_motor_left.set(output.motor_left_set);
         _deps.wheel_motor_right.set(output.motor_right_set);

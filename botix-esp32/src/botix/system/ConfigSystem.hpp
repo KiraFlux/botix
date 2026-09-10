@@ -94,12 +94,22 @@ private:
         {"mavlink", protocol::Kind::Mavlink},
     };
 
-    config::Registry::Field _registry_fields[37]{
-        // common (3)
+    config::Registry::EnumItem const _registry_lidar_strategies[4]{
+        {"pass", unit::LidarUnit::Strategy::Pass},
+        {"nearest", unit::LidarUnit::Strategy::Nearest},
+        {"furthest", unit::LidarUnit::Strategy::Furthest},
+        {"lpf", unit::LidarUnit::Strategy::LPF},
+    };
+
+    config::Registry::Field _registry_fields[41]{
+        // common (1)
         {"hostname", user.wifi_service.hostname},
+
+        // boot (4)
         {"boot.transport", user.boot.transport, _registry_transport_entries},
         {"boot.protocol", user.boot.protocol, _registry_protocol_entries},
         {"boot.init_lidar", user.boot.init_lidar},
+        {"boot.lidar.strategy", user.boot.lidar.strategy, _registry_lidar_strategies},
 
         // services
 
@@ -116,15 +126,19 @@ private:
 
         // systems
 
+        // behavior: operational
+        {"op.move_ls", user.operational_behavior.moving_lidar_strategy, _registry_lidar_strategies},
+        {"op.stop_ls", user.operational_behavior.stopped_lidar_strategy, _registry_lidar_strategies},
+
         // telemetry: wheel_distance (3)
-        {"telem.wheel_dist.enabled", device.outgoing_telemetry.wheel_distance.enabled},// TODO: move to boot
-        {"telem.wheel_dist.period_ms", device.outgoing_telemetry.wheel_distance.timer.value},
-        {"telem.wheel_dist.ahead_ms", device.outgoing_telemetry.wheel_distance.update_ahead_ms},
+        {"telem.wd.enabled", device.outgoing_telemetry.wheel_distance.enabled},// TODO: move to boot
+        {"telem.wd.period_ms", device.outgoing_telemetry.wheel_distance.timer.value},
+        {"telem.wd.ahead_ms", device.outgoing_telemetry.wheel_distance.update_ahead_ms},
 
         // telemetry: obstacle_distance (3)
-        {"telem.obstacle_dist.enabled", device.outgoing_telemetry.obstacle_distance.enabled},// TODO: move to boot
-        {"telem.obstacle_dist.period_ms", device.outgoing_telemetry.obstacle_distance.timer.value},
-        {"telem.obstacle_dist.ahead_ms", device.outgoing_telemetry.obstacle_distance.update_ahead_ms},
+        {"telem.od.enabled", device.outgoing_telemetry.obstacle_distance.enabled},// TODO: move to boot
+        {"telem.od.period_ms", device.outgoing_telemetry.obstacle_distance.timer.value},
+        {"telem.od.ahead_ms", device.outgoing_telemetry.obstacle_distance.update_ahead_ms},
 
         // transport: (3)
         {"udp.local_port", device.transport_registry.wifi_udp.local_port},
@@ -140,6 +154,7 @@ private:
         {"lidar.dist_min_mm", device.unit_registry.lidar.min_distance_mm},
         {"lidar.dist_max_mm", device.unit_registry.lidar.max_distance_mm},
         {"lidar.min_intensity", device.unit_registry.lidar.min_intensity},
+        {"lidar.lpf_factor", device.unit_registry.lidar.low_pass_filter_factor},
         {"lidar.baudrate", device.unit_registry.lidar.uart.baudrate},
         {"lidar.rx_buffer_len", reinterpret_cast<kf::u32 &>(device.unit_registry.lidar.uart.rx_buffer_length)},
 

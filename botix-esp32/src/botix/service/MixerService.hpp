@@ -52,6 +52,10 @@ struct MixerService :
             motor_right_set{0},
             servo_claw_set{0},
             servo_arm_set{0};
+
+        [[nodiscard]] constexpr bool moving() const noexcept {
+            return (motor_left_set != 0) and (motor_right_set != 0);
+        }
     };
 
     struct Dependencies {
