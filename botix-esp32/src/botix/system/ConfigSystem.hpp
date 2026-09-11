@@ -101,7 +101,7 @@ private:
         {"lpf", unit::LidarUnit::Strategy::LPF},
     };
 
-    config::Registry::Field _registry_fields[41]{
+    config::Registry::Field _registry_fields[44]{
         // common (1)
         {"hostname", user.wifi_service.hostname},
 
@@ -145,8 +145,11 @@ private:
         {"udp.remote_port", device.transport_registry.wifi_udp.remote.port},
         {"udp.remote_ip", device.transport_registry.wifi_udp.remote.address},
 
-        // protocol: (1)
-        {"protocol.mavlink.heartbeat_period_ms", device.protocol_registry.mavlink.heartbeat_timer.value},
+        // protocol: mavlink (4)
+        {"mavlink.heartbeat_period_ms", device.protocol_registry.mavlink.heartbeat_timer.value},
+        {"mavlink.max_poll_msg", device.protocol_registry.mavlink.max_poll_messages},
+        {"mavlink.self_id", device.protocol_registry.mavlink.system_id_self},
+        {"mavlink.target_id", device.protocol_registry.mavlink.system_id_target},
 
         // driver:
 
