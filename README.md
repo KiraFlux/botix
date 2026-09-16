@@ -102,6 +102,8 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 
 </div>
 
+> View [printable parts table](docs/printable_parts.md)
+
 <br><br>
 
 <div align="center">

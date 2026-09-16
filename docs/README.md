@@ -8,6 +8,7 @@ Technical documentation for the Botix robot project: assembly guide, part lists,
 | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | `assets/`                                              | Images, renders, and photographs used in the documentation.                                     |
 | [`gallery.md`](gallery.md)                             | Visual gallery of robot iterations and hardware revisions.                                      |
+| [`printable_parts.md`](printable_parts.md)             | List of printable parts                                                                         |
 | [`firmware_contributing.md`](firmware_contributing.md) | Detailed guidelines for firmware developers (code style, architecture, V‑codes).                |
 | [`assembly_guide.md`](assembly_guide.md)               | Step‑by‑step assembly instructions with photos and diagrams.  *(not implemented yet)*           |
 | (future)                                               | Electrical schematics, Bill of Materials (BOM), print profiles, and other technical references. |
