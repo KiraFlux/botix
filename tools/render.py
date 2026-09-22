@@ -7,6 +7,7 @@ import argparse
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from itertools import chain
+import json
 import math
 from pathlib import Path
 import subprocess
@@ -332,76 +333,35 @@ class Scene(PovObject):
         pov.write("\n")
 
 
-view_isometric_elevation: Final = 35.264
-views: Final[Mapping[str, SpherePosition]] = {
-    "top":    SpherePosition.from_degrees(0,     89),
-    "bottom": SpherePosition.from_degrees(0,    -89),
-    "front":  SpherePosition.from_degrees(0,      0),
-    "back":   SpherePosition.from_degrees(180,    0),
-    "right":  SpherePosition.from_degrees(90,     0),
-    "left":   SpherePosition.from_degrees(270,    0),
-
-    "front_top_right": SpherePosition.from_degrees(45,   view_isometric_elevation),
-    "back_top_right":  SpherePosition.from_degrees(135,  view_isometric_elevation),
-    "back_top_left":   SpherePosition.from_degrees(225,  view_isometric_elevation),
-    "front_top_left":  SpherePosition.from_degrees(315,  view_isometric_elevation),
-
-    "front_bottom_right": SpherePosition.from_degrees(45,  -view_isometric_elevation),
-    "back_bottom_right":  SpherePosition.from_degrees(135, -view_isometric_elevation),
-    "back_bottom_left":   SpherePosition.from_degrees(225, -view_isometric_elevation),
-    "front_bottom_left":  SpherePosition.from_degrees(315, -view_isometric_elevation),
-}
-
-light_descriptions_default: Final[Sequence[AreaLight.Description.Entry]] = (
-    {
-        "color": "#FFB772",
-        "size": 400,
-        "samples": 8,
-        "azimuth": 0,
-        "elevation": 45,
-    },
-    {
-        "color": "#729EFF",
-        "size": 500,
-        "samples": 6,
-        "azimuth": -120,
-        "elevation": 25,
-    },
-    {
-        "color": "#8CD8BF",
-        "size": 500,
-        "samples": 6,
-        "azimuth": 120,
-        "elevation": 25,
-    },
-    {
-        "color": "#7F7F8C",
-        "size": 600,
-        "samples": 4,
-        "azimuth": 0,
-        "elevation": -65,
-    },
-)
-
-solid_material_default: Final[Solid.Material.Entry] = {
-    "ambient": 0.15,
-    "diffuse": 0.9,
-    "specular": 0.0,
-    "roughness": 1.0,
-}
-
-
 @dataclass(frozen=True, kw_only=True)
 class SceneBuilder:
+
+    @dataclass(frozen=True, kw_only=True)
+    class View:
+
+        type Entry = Mapping[str, Any]
+
+        name: str
+        position: SpherePosition
+
+        @classmethod
+        def from_entry(cls, name: str, entry: Entry) -> Self:
+            return cls(
+                name=name,
+                position=SpherePosition.from_degrees(
+                    float(entry["azimuth"]),
+                    float(entry["elevation"]),
+                ),
+            )
 
     @dataclass(frozen=True, kw_only=True)
     class Config:
         view_fov: float
         view_margin: float
-        views: Mapping[str, SpherePosition]
+        views: Sequence[SceneBuilder.View]
 
         light_distance_factor: float
-        light_descriptions: Iterable[AreaLight.Description]
+        light_descriptions: Sequence[AreaLight.Description]
 
         scene_config: Scene.Config
 
@@ -464,34 +424,103 @@ class RenderJob:
 
     scene_builder: SceneBuilder.Config
 
+    __view_isometric_elevation: ClassVar[Final] = 35.264
+    _default_views_set: ClassVar[Final[Mapping[str, SceneBuilder.View.Entry]]] = {
+        "top":    {"azimuth": 0, "elevation": 89},
+        "bottom": {"azimuth": 0, "elevation": -89},
+        "front":  {"azimuth": 0, "elevation": 0},
+        "back":   {"azimuth": 180, "elevation": 0},
+        "right":  {"azimuth": 90, "elevation": 0},
+        "left":   {"azimuth": 270, "elevation": 0},
+
+        "front_top_right": {"azimuth": 45, "elevation":  __view_isometric_elevation},
+        "back_top_right":  {"azimuth": 135, "elevation": __view_isometric_elevation},
+        "back_top_left":   {"azimuth": 225, "elevation": __view_isometric_elevation},
+        "front_top_left":  {"azimuth": 315, "elevation": __view_isometric_elevation},
+
+        "front_bottom_right": {"azimuth": 45, "elevation": -__view_isometric_elevation},
+        "back_bottom_right":  {"azimuth": 135, "elevation": -__view_isometric_elevation},
+        "back_bottom_left":   {"azimuth": 225, "elevation": -__view_isometric_elevation},
+        "front_bottom_left":  {"azimuth": 315, "elevation": -__view_isometric_elevation},
+    }
+
+    _default_solid_material: ClassVar[Final[Solid.Material.Entry]] = {
+        "ambient": 0.15,
+        "diffuse": 0.9,
+        "specular": 0.0,
+        "roughness": 1.0,
+    }
+
+    _default_light_descriptions: ClassVar[Final[Sequence[AreaLight.Description.Entry]]] = (
+        {
+            "color": "#FFB772",
+            "size": 400,
+            "samples": 8,
+            "azimuth": 0,
+            "elevation": 45,
+        },
+        {
+            "color": "#729EFF",
+            "size": 500,
+            "samples": 6,
+            "azimuth": -120,
+            "elevation": 25,
+        },
+        {
+            "color": "#8CD8BF",
+            "size": 500,
+            "samples": 6,
+            "azimuth": 120,
+            "elevation": 25,
+        },
+        {
+            "color": "#7F7F8C",
+            "size": 600,
+            "samples": 4,
+            "azimuth": 0,
+            "elevation": -65,
+        },
+    )
+
     @classmethod
     def from_cli(cls, argv: Optional[Sequence[str]] = None) -> Self:
         parser = argparse.ArgumentParser(
-            prog="render",
-            description="Render a 3D-printable part from OBJ via POV-Ray.",
+            description="Render a part from OBJ via POV-Ray.",
         )
 
         parser.add_argument("obj", type=Path, metavar="OBJ")
+        parser.add_argument("--dry-run", action="store_true")
         parser.add_argument("-o", "--out", type=Path, default=Path.cwd(), metavar="DIR")
         parser.add_argument("-n", "--name", type=str, default=None, metavar="NAME")
         parser.add_argument("-r", "--resolution", type=int, default=1024, metavar="N")
-        parser.add_argument("--fov", type=float, default=30, metavar="DEG")
-        parser.add_argument("--views", type=str, default="all", metavar="LIST")
-        parser.add_argument("--dry-run", action="store_true")
+        parser.add_argument("-b", "--background", type=str, default="#000000", metavar="#RRBBGG")
+        parser.add_argument("-p", "--default-pigment", type=str, default="#ffffff", metavar="#RRBBGG")
         parser.add_argument("-v", "--verbose", action="store_true")
-        parser.add_argument("--background", type=str, default="#000000")
-        parser.add_argument("--pigment", type=str, default="#ffffff")
+        parser.add_argument("--views", type=str, default="all", metavar="LIST")
+        parser.add_argument("--fov", type=float, default=30, metavar="DEG")
+        parser.add_argument("--lights-file", type=Path, default=None, metavar="FILE")
+        parser.add_argument("--material-file", type=Path, default=None, metavar="FILE")
+        parser.add_argument("--views-file", type=Path, default=None, metavar="FILE")
 
         ns = parser.parse_args(argv)
 
-        def selected(names: Sequence[str]) -> Mapping[str, SpherePosition]:
-            if "all" in names:
-                return views
+        def get_entries[T](views_file: Optional[Path], default: T) -> T:
+            if views_file is None:
+                return default
 
-            if (unknown := tuple(filter(lambda n: n not in views, names))):
-                parser.error(f"unknown view(s): {', '.join(unknown)}. Available: {', '.join(views.keys())}")
+            if not views_file.exists():
+                parser.error(f"{views_file=!s} not exists.")
 
-            return {name: views[name] for name in names}
+            with views_file.open("r") as f:
+                return json.load(f)
+
+        def selected_views(active_view_set: Mapping[str, SceneBuilder.View.Entry], names: Iterable[str]) -> Sequence[SceneBuilder.View]:
+            names = tuple(active_view_set.keys() if "all" in names else names)
+
+            if unknown := tuple(filter(lambda n: n not in active_view_set, names)):
+                parser.error(f"unknown view(s): {', '.join(unknown)}. Available: {', '.join(active_view_set.keys())}")
+
+            return tuple(map(lambda n: SceneBuilder.View.from_entry(n, active_view_set[n]), names))
 
         return cls(
             obj_file=ns.obj.resolve(),
@@ -503,10 +532,10 @@ class RenderJob:
             scene_builder=SceneBuilder.Config(
                 view_fov=ns.fov,
                 view_margin=1.05,
-                views=selected(tuple(filter(None, map(str.strip, ns.views.split(","))))),
+                views=selected_views(get_entries(ns.views_file, cls._default_views_set), filter(None, map(str.strip, ns.views.split(",")))),
 
                 light_distance_factor=2.0,
-                light_descriptions=map(AreaLight.Description.from_entry, light_descriptions_default),
+                light_descriptions=tuple(map(AreaLight.Description.from_entry, get_entries(ns.lights_file, cls._default_light_descriptions))),
 
                 scene_config=Scene.Config(
                     assumed_gamma=2.2,
@@ -515,8 +544,8 @@ class RenderJob:
                     max_trace_level=10,
                 ),
 
-                solid_material=Solid.Material.from_entry(solid_material_default),
-                solid_pigment_color=Color.from_hex(ns.pigment),
+                solid_material=Solid.Material.from_entry(get_entries(ns.material_file, cls._default_solid_material)),
+                solid_pigment_color=Color.from_hex(ns.default_pigment),
             ),
         )
 
@@ -536,21 +565,22 @@ def main() -> int:
     total_renders = len(job.scene_builder.views)
     failed_renders = 0
 
-    for i, (view_name, view_position) in enumerate(job.scene_builder.views.items()):
-        stem = job.work_dir / f"{job.project_name}_{view_name}"
+    for i, view in enumerate(job.scene_builder.views):
+        stem = job.work_dir / f"{job.project_name}_{view.name}"
         pov_file = stem.with_suffix(".pov")
 
         if job.dry_run:
             print(pov_file.stem)
             continue
 
-        print(f"[{i + 1}/{total_renders}]: {view_name}")
+        print(f"[{i + 1}/{total_renders}]: {view.name}")
 
         print("Building scene.")
-        scene = build_scene(view_position)
+        scene = build_scene(view.position)
 
         print(f"Writing {pov_file}.")
-        with open(pov_file, "w") as f:
+
+        with pov_file.open("w") as f:
             scene.write_pov(f)
 
         print("Rendering.")
