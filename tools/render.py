@@ -532,7 +532,7 @@ class RenderJob:
             scene_builder=SceneBuilder.Config(
                 view_fov=ns.fov,
                 view_margin=1.05,
-                views=selected_views(get_entries(ns.views_file, cls._default_views_set), filter(None, map(str.strip, ns.views.split(",")))),
+                views=selected_views(get_entries(ns.views_file, cls._default_views_set), tuple(filter(None, map(str.strip, ns.views.split(","))))),
 
                 light_distance_factor=2.0,
                 light_descriptions=tuple(map(AreaLight.Description.from_entry, get_entries(ns.lights_file, cls._default_light_descriptions))),

@@ -19,7 +19,7 @@ list:
 
 $(out)/%.done: $(artifacts)/%.obj $(render)
 	@mkdir -p $(out)
-	$(render) $< -o $(out) -r $(res) --views $(views) --background "$(bg)" --pigment "$(fg)"
+	$(render) $< -o $(out) -r $(res) --views $(views) -b "$(bg)" -p "$(fg)"
 	@touch $@
 
 clean:
