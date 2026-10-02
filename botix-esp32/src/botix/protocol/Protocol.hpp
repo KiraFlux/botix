@@ -24,7 +24,7 @@ struct Protocol : kf::mixin::NonCopyable {
         transport::Link &transport_link;
         OutgoingTelemetry &outgoing_telemetry;
         cli::Channel::Output &cli_channel_output;
-        kf::units::Milliseconds timestamp;
+        kf::units::Milliseconds timestamp;///< Sending time mark
     };
 
     virtual void poll(PollContext const &context) noexcept = 0;

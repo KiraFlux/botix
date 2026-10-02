@@ -5,7 +5,7 @@
 
 #include <MAVLink.h>
 
-#include <kf/BytesView.hpp>
+#include <kf/Queue.hpp>
 #include <kf/Timer.hpp>
 #include <kf/core.hpp>
 #include <kf/math.hpp>
@@ -15,9 +15,7 @@
 #include <kf/mixin/Configured.hpp>
 #include <kf/mixin/DefaultResettable.hpp>
 
-#include "botix/IncomingTelemetry.hpp"
 #include "botix/transport/Address.hpp"
-#include "botix/transport/Link.hpp"
 
 #include "botix/protocol/Protocol.hpp"
 
@@ -30,6 +28,8 @@ struct MavlinkProtocolConfig : kf::mixin::DefaultResettable<MavlinkProtocolConfi
     kf::Timer::Config heartbeat_timer{.value = 2'000};
 
     kf::u8
+
+        max_poll_messages{3},
 
         /// @brief MAVLink system ID of this controller
         system_id_self{0x01},
@@ -59,13 +59,6 @@ struct MavlinkProtocol :
 
     using kf::mixin::Configured<Config>::Configured;
 
-    [[nodiscard]] static bool sendMessage(transport::Link &transport_link, mavlink_message_t const &message) noexcept {
-        kf::u8 buffer[MAVLINK_MAX_PACKET_LEN];
-        auto const len = mavlink_msg_to_send_buffer(buffer, &message);
-
-        return transport_link.writeBuffer({buffer, len});
-    }
-
     void poll(PollContext const &context) noexcept override {
 
         if (context.outgoing_telemetry.wheel_distance.ready(context.timestamp)) {
@@ -79,10 +72,20 @@ struct MavlinkProtocol :
         if (_heartbeat_timer.expired(context.timestamp)) {
             _heartbeat_timer.start(context.timestamp);
 
-            (void) sendHeartbeat(context.transport_link);
+            (void) sendHeartbeat(context);
         }
 
         sendSerialControl(context);
+
+        auto const to_read = kf::math::min(this->config().max_poll_messages, messages.availableForRead());
+        for (auto i = 0; i < to_read; i += 1) {
+
+            kf::u8 buffer[MAVLINK_MAX_PACKET_LEN];
+            auto const message = messages.read();
+            auto const len = mavlink_msg_to_send_buffer(buffer, &message.unwrap());
+
+            (void) context.transport_link.writeBuffer({buffer, len});
+        }
     }
 
     void receive(ReceiveContext const &context) noexcept override {
@@ -119,13 +122,15 @@ struct MavlinkProtocol :
     }
 
 private:
+    mavlink_message_t message_queue_buffer[64]{};
+    kf::Queue<mavlink_message_t> messages{{message_queue_buffer}};
     kf::Timer _heartbeat_timer{this->config().heartbeat_timer};
 
     void onManualControl(ReceiveContext const &context, mavlink_message_t const &message) noexcept {
         mavlink_manual_control_t m;
         mavlink_msg_manual_control_decode(&message, &m);
         context.incoming_telemetry.control_input.update(
-            botix::IncomingTelemetry::ControlInput{
+            {
                 .r_axis = m.r,
                 .z_axis = m.z,
                 .y_axis = m.y,
@@ -140,33 +145,34 @@ private:
         (void) context.cli_channel_input.feed({reinterpret_cast<char const *>(m.data), m.count});
     }
 
-    [[nodiscard]] bool sendWheelDistance(PollContext const &context) const noexcept {
+    [[nodiscard]] bool sendWheelDistance(PollContext const &context) noexcept {
+        auto const &wheel_distance = context.outgoing_telemetry.wheel_distance;
+
         mavlink_message_t message;
 
         kf::u8 const wheel_count = 2;
-
         kf::f64 const distance[wheel_count]{
-            context.outgoing_telemetry.wheel_distance.value().left_mm / 1'000,
-            context.outgoing_telemetry.wheel_distance.value().right_mm / 1'000,
+            wheel_distance.value().left_mm / 1'000,
+            wheel_distance.value().right_mm / 1'000,
         };
 
         (void) mavlink_msg_wheel_distance_pack(
             this->config().system_id_self,
             this->config().component_id_telemetry,
             &message,
-            static_cast<kf::u64>(context.timestamp) * 1'000,// time_usec
+            static_cast<kf::u64>(wheel_distance.timestamp()) * 1'000,// time_usec
             wheel_count,
             distance);
 
-        return sendMessage(context.transport_link, message);
+        return messages.write(message);
     }
 
-    [[nodiscard]] bool sendObstacleDistance(PollContext const &context) const noexcept {
-        auto const timestamp_useconds = static_cast<kf::u64>(context.timestamp) * 1'000;
-        auto const &obstacle_distance = context.outgoing_telemetry.obstacle_distance.value();
+    [[nodiscard]] bool sendObstacleDistance(PollContext const &context) noexcept {
+        auto const &obstacle_distance = context.outgoing_telemetry.obstacle_distance;
+        auto const timestamp_useconds = static_cast<kf::u64>(obstacle_distance.timestamp()) * 1'000;
 
         bool all_ok = true;
-        auto output = obstacle_distance.distances_mm;
+        auto output = obstacle_distance.value().distances_mm;
         kf::usize angle_offset = 0;
 
         while (output.length() > 0) {
@@ -189,14 +195,14 @@ private:
                 timestamp_useconds,
                 MAV_DISTANCE_SENSOR_LASER,
                 distances_cm,
-                1,                                     // increment (angular width)
-                obstacle_distance.min_distance_mm / 10,// cm
-                obstacle_distance.max_distance_mm / 10,// cm
-                0.0f,                                  // increment_f (not used)
+                1,                                             // increment (angular width)
+                obstacle_distance.value().min_distance_mm / 10,// cm
+                obstacle_distance.value().max_distance_mm / 10,// cm
+                0.0f,                                          // increment_f (not used)
                 static_cast<kf::f32>(angle_offset),
                 MAV_FRAME_BODY_FRD);
 
-            if (not sendMessage(context.transport_link, message)) {
+            if (not messages.write(message)) {
                 all_ok = false;
             }
 
@@ -207,7 +213,7 @@ private:
         return all_ok;
     }
 
-    void sendSerialControl(PollContext const &context) const noexcept {
+    void sendSerialControl(PollContext const &context) noexcept {
         mavlink_message_t message;
 
         auto output = context.cli_channel_output.drain();
@@ -229,13 +235,13 @@ private:
                 this->config().system_id_target,
                 0);
 
-            (void) sendMessage(context.transport_link, message);
+            (void) messages.write(message);
 
             output = output.fromOffset(chunk_length);
         }
     }
 
-    [[nodiscard]] bool sendHeartbeat(transport::Link &transport_link) const noexcept {
+    [[nodiscard]] bool sendHeartbeat(PollContext const &context) noexcept {
         mavlink_message_t message;
 
         (void) mavlink_msg_heartbeat_pack(
@@ -247,7 +253,7 @@ private:
             0, 0, 0// Base mode, Custom mode, System status
         );
 
-        return sendMessage(transport_link, message);
+        return messages.write(message);
     }
 };
 

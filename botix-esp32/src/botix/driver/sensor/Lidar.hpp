@@ -1,7 +1,7 @@
 // Copyright (c) 2026 KiraFlux
 // SPDX-License-Identifier: GPL-3.0-or-later
 //
-// Acknowledge: 36-byte packet format got from Mantlio's (https://github.com/Mantlio)
+// Acknowledge: 36-byte packet format got from @Mantlio (https://github.com/Mantlio)
 
 #pragma once
 
@@ -15,6 +15,7 @@
 #include <kf/UART.hpp>
 #include <kf/core.hpp>
 #include <kf/gpio.hpp>
+#include <kf/math.hpp>
 #include <kf/rtos/Task.hpp>
 
 #include <kf/mixin/Configured.hpp>
@@ -26,9 +27,9 @@
 
 namespace botix::internal {
 
-struct LidarData : kf::mixin::DefaultResettable<LidarData> {
+template<kf::integer_type T> struct LidarData : kf::mixin::DefaultResettable<LidarData<T>> {
 
-    using Distance = kf::u16;
+    using Distance = T;
 
     static constexpr kf::usize distances_total{360};
     static constexpr auto invalid_value{static_cast<Distance>(-1)};
@@ -40,17 +41,22 @@ struct LidarData : kf::mixin::DefaultResettable<LidarData> {
     }
 };
 
+using PublicLidarData = LidarData<kf::u16>;
+
 struct LidarConfig {
+
     kf::UART::Config uart{
         .baudrate{115'200},
         .rx_buffer_length{0x08'00},
     };
 
-    LidarData::Distance
+    PublicLidarData::Distance
         min_distance_mm{20},
         max_distance_mm{12'000};
 
-    kf::u8 min_intensity{15};
+    kf::u8
+        min_intensity{15},
+        low_pass_filter_factor{16};
 };
 
 }// namespace botix::internal
@@ -59,7 +65,7 @@ namespace botix::driver::sensor {
 
 struct Lidar :
 
-    kf::driver::sensor::SensorDriver<Lidar, internal::LidarData const &, void>,
+    kf::driver::sensor::SensorDriver<Lidar, internal::PublicLidarData const &, void>,
     kf::mixin::Configured<internal::LidarConfig>,
     kf::mixin::Quitable<Lidar>
 
@@ -69,7 +75,19 @@ struct Lidar :
 
     using Config = internal::LidarConfig;
 
-    using Data = internal::LidarData;
+    using Data = internal::PublicLidarData;
+
+    /// @brief Runtime driver parameters (Active strategies, etc.)
+    struct Parameters : kf::mixin::DefaultResettable<Parameters> {
+
+        /// @brief Update strategies for each individual angular sector of the lidar scan.
+        enum class Strategy : kf::u8 {
+            Pass,    ///> No filtering: every new valid measurement completely replaces the previous stored value for that angle.
+            Nearest, ///> Accumulate the minimum: keeps the smallest valid distance ever received for each angle.
+            Furthest,///> Accumulate the maximum: keeps the largest valid distance ever received for each angle.
+            LPF,     ///> Exponential smoothing (first‑order low‑pass filter).
+        } strategy{Strategy::Pass};
+    };
 
     struct SpecificConfig {
         kf::u8 uart_num;
@@ -91,14 +109,22 @@ struct Lidar :
         return (_task_handle != nullptr) and eTaskState::eSuspended != eTaskGetState(_task_handle);
     }
 
+    [[nodiscard]] Parameters &parameters() noexcept {
+        return _parser.parameters;
+    }
+
 private:
     // Parser is composed in driver for future runtime switch between differrend LD models
+    // TODO: extract Data updater from parser
     struct Parser :
 
         kf::mixin::Configured<Config>,
         kf::mixin::Initable<Parser, void()>
 
     {
+
+        using q24_8 = kf::u32;
+        using SampleData = internal::LidarData<q24_8>;
 
         using kf::mixin::Configured<Config>::Configured;
 
@@ -138,7 +164,13 @@ private:
 
         void updateTo(Data &output_data) noexcept {
             if (mutexTake()) {
-                output_data = _data;
+
+                for (kf::usize i = 0; i < Data::distances_total; i += 1) {
+                    auto &sample = _sample_data.distances_mm[i];
+                    output_data.distances_mm[i] = (SampleData::invalid_value == sample) ? Data::invalid_value : ((sample + 0x80) >> 8);
+                    sample = SampleData::invalid_value;
+                }
+
                 (void) mutexGive();
             }
             // TODO: fill holes if enabled
@@ -217,13 +249,17 @@ private:
 
         static constexpr Header header_sample{.bytes{0x55, 0xAA, 0x03, 0x08}};
 
-        Data _data{};
+        SampleData _sample_data{};
         ByteBuffer<Body> _body_buffer{};
         ByteBuffer<Header> _header_buffer{};
         StaticSemaphore_t _mutex_buffer;
         SemaphoreHandle_t _mutex{nullptr};
         State _state{State::Idle};
 
+    public:
+        Parameters parameters{};
+
+    private:
         [[nodiscard]] bool mutexTake() noexcept {
             return (nullptr != _mutex) and xSemaphoreTake(_mutex, pdMS_TO_TICKS(10)) == pdTRUE;
         }
@@ -232,14 +268,32 @@ private:
             return (nullptr != _mutex) and xSemaphoreGive(_mutex) == pdTRUE;
         }
 
-        [[nodiscard]] auto saneDistance(Body::Measurement measurement) const noexcept {
+        [[nodiscard]] q24_8 calcSample(q24_8 last_sample, Body::Measurement measurement) const noexcept {
             if (
-                (measurement.intensity >= this->config().min_intensity) and
-                (measurement.distance_mm >= this->config().min_distance_mm) and
-                (measurement.distance_mm <= this->config().max_distance_mm)) {
-                return static_cast<Data::Distance>(measurement.distance_mm);
-            } else {
-                return Data::invalid_value;
+                (measurement.intensity < this->config().min_intensity) or
+                (measurement.distance_mm < this->config().min_distance_mm) or
+                (measurement.distance_mm > this->config().max_distance_mm)) {
+                return last_sample;
+            }
+
+            auto const current_sample = static_cast<SampleData::Distance>(measurement.distance_mm << 8);
+            if (SampleData::invalid_value == last_sample) {
+                return current_sample;
+            }
+
+            switch (parameters.strategy) {
+                case Parameters::Strategy::Nearest:
+                    return kf::math::min(current_sample, last_sample);
+
+                case Parameters::Strategy::Furthest:
+                    return kf::math::max(current_sample, last_sample);
+
+                case Parameters::Strategy::LPF:
+                    return static_cast<q24_8>(static_cast<kf::i32>(last_sample) + ((static_cast<kf::i32>(current_sample) - static_cast<kf::i32>(last_sample)) * static_cast<kf::i32>(this->config().low_pass_filter_factor) >> 8));
+
+                case Parameters::Strategy::Pass:
+                default:
+                    return current_sample;
             }
         }
 
@@ -248,15 +302,17 @@ private:
 
             if (mutexTake()) {
                 for (kf::usize i = 0; i < Body::measurement_count; i += 1) {
-                    _data.distances_mm[body.index(i, delta)] = saneDistance(body.measurements[i]);
+                    auto &sample = _sample_data.distances_mm[body.index(i, delta)];
+                    sample = calcSample(sample, body.measurements[i]);
                 }
+
                 (void) mutexGive();
             }
         }
 
         KF_IMPL_INITABLE(Parser, void());
         void initImpl() noexcept {
-            _data.reset();
+            _sample_data.reset();
             _header_buffer.reset();
             _body_buffer.reset();
             _state = State::Idle;

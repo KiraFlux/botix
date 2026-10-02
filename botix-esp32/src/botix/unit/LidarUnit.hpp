@@ -22,6 +22,8 @@ struct LidarUnit : Unit {
 
     using Driver = botix::driver::sensor::Lidar;
 
+    using Strategy = Driver::Parameters::Strategy;
+
     struct Dependencies {
         Driver::Dependencies const &driver;
         Index index;
@@ -31,10 +33,17 @@ struct LidarUnit : Unit {
         Unit{Kind::Lidar, deps.index},
         _driver{deps.driver} {}
 
+    /// @brief Persistent configuration
     [[nodiscard]] decltype(auto) config() const noexcept {
         return _driver.config();
     }
 
+    /// @brief Runtime parameters
+    [[nodiscard]] decltype(auto) parameters() noexcept {
+        return _driver.parameters();
+    }
+
+    /// @brief Read lidar distances
     [[nodiscard]] decltype(auto) read() noexcept {
         return _driver.read();
     }
