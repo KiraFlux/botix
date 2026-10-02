@@ -8,21 +8,21 @@ This gallery provides a curated visual overview of the Botix mobile robot projec
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_front.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_front.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_back_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_left_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_back_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_left_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
 </tr>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_07/photo_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </table>
 
 ESP32 version on updated chassis. Uses the double‑sided power board (toner transfer method), which was tested on this robot.
@@ -33,16 +33,16 @@ ESP32 version on updated chassis. Uses the double‑sided power board (toner tra
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_uno_2026_07/photo_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2026_07/photo_front.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2026_07/photo_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2026_07/photo_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2026_07/photo_front.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2026_07/photo_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_uno_2026_07/photo_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2026_07/photo_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2026_07/photo_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2026_07/photo_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2026_07/photo_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2026_07/photo_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -54,25 +54,25 @@ Current basic-robot version. Chassis with low frames and side walls. Color schem
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_etching_begin.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_etching_end.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_copper_against_light.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_etching_begin.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_etching_end.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_copper_against_light.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/sch_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_toner_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_etched_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_copper_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/sch_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_toner_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_etched_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_copper_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/sch_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/render_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_toner_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_etched_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_copper_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_double_2026_07/photo_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/sch_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/render_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_toner_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_etched_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_copper_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -84,17 +84,17 @@ Double‑layer power board, manufactured using the toner transfer method (TTM).
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_single_2026_07/sch_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_single_2026_07/photo_toner_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_single_2026_07/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_single_2026_07/sch_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_single_2026_07/photo_toner_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_single_2026_07/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
 
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_single_2026_07/photo_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_single_2026_07/photo_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_single_2026_07/photo_etched_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_single_2026_07/photo_copper_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_single_2026_07/render_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_ttm_single_2026_07/photo_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_single_2026_07/photo_etched_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_single_2026_07/photo_copper_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_single_2026_07/render_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_single_2026_07/photo_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -106,16 +106,16 @@ Single‑sided version of the same board, also made with toner transfer.
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_pcb_order_2026_07/sch_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_pcb_order_2026_07/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_pcb_order_2026_07/photo_pre_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_pcb_order_2026_07/photo_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_pcb_order_2026_07/sch_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_pcb_order_2026_07/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_pcb_order_2026_07/photo_pre_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_pcb_order_2026_07/photo_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_pcb_order_2026_07/sch_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_pcb_order_2026_07/render_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_pcb_order_2026_07/photo_pre_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v2_pcb_order_2026_07/photo_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_pcb_order_2026_07/sch_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_pcb_order_2026_07/render_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_pcb_order_2026_07/photo_pre_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_pcb_order_2026_07/photo_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -132,8 +132,8 @@ Solutions: two independent channels on Mini560 PRO (5V) with 35V 470 µF capacit
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_05/photo_assembled.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_05/photo_pre_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_05/photo_assembled.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_05/photo_pre_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -145,8 +145,8 @@ Alternative chassis design with low walls and frames — the robot became lower.
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_03/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2026_03/photo_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_03/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_03/photo_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -158,21 +158,21 @@ Second iteration of the ESP32 robot. Uses the same module with a shield (ESP32D 
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_uno_2025_09/render_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2025_09/photo_front.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2025_09/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2025_09/render_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2025_09/photo_front.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2025_09/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
 </tr>
-  <td style="padding: 0;"><img src="assets/botix_uno_2025_09/photo_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2025_09/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2025_09/photo_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2025_09/photo_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2025_09/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2025_09/photo_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </table>
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_uno_2025_09/photo_3_assembled_robots.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_uno_2025_09/photo_9_assembled_robots.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2025_09/photo_3_assembled_robots.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_uno_2025_09/photo_9_assembled_robots.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -184,13 +184,13 @@ A direct evolution of the MOSH version with improved chassis and simplified asse
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v1_2025_09/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v1_2025_09/photo_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v1_2025_09/photo_pcb.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v1_2025_09/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v1_2025_09/photo_assembled_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v1_2025_09/photo_pcb.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_power_v1_2025_09/render_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_power_v1_2025_09/photo_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v1_2025_09/render_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_power_v1_2025_09/photo_assembled_bottom.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -202,9 +202,9 @@ First version of the power board. Replaced the 18650 cells used in early prototy
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2025_08/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2025_08/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/botix_esp32_2025_08/photo_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2025_08/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2025_08/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2025_08/photo_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -216,14 +216,14 @@ Based on experience from VSOSH and MOSH, a new chassis was designed to be logica
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_11/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_11/photo_back_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_11/photo_in_assembly_with_manipulator.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_11/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_11/photo_back_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_11/photo_in_assembly_with_manipulator.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_11/render_isometric_0.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_11/render_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_11/render_left_no_deck.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_11/render_isometric_0.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_11/render_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_11/render_left_no_deck.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -235,14 +235,14 @@ Stage where successful features from the VSOSH chassis were adopted: open remova
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/historic_vsosh_2024_08/photo_chassis_plywood.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_vsosh_2024_08/photo_chassis.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_vsosh_2024_08/render_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_vsosh_2024_08/photo_chassis_plywood.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_vsosh_2024_08/photo_chassis.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_vsosh_2024_08/render_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/historic_vsosh_2024_08/render_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_vsosh_2024_08/render_assemble_final.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_vsosh_2024_08/render_down.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_vsosh_2024_08/render_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_vsosh_2024_08/render_assemble_final.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_vsosh_2024_08/render_down.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -254,9 +254,9 @@ Chassis inspired by the robot shown by TsPM at the Moscow practical round. Origi
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_06/photo_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_06/render_back_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_06/render_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_06/photo_front_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_06/render_back_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_06/render_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -268,12 +268,12 @@ Switch to 3S (12V) power. Power module moved to the rear and made as a closed bo
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_01/photo_back_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_01/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_01/photo_back_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_01/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_01/render_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2024_01/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_01/render_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2024_01/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 
@@ -285,9 +285,9 @@ Platform updated: more holes and bottom reinforcement ribs added.
 
 <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2023_03/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2023_03/photo_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/historic_mosh_2023_03/render_first_ever.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2023_03/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2023_03/photo_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/historic_mosh_2023_03/render_first_ever.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 </table>
 

@@ -2,7 +2,7 @@
 
 # Botix
 
-<img src="docs/assets/botix_uno_2026_07/photo_front_left.jpg" height="400" style="object-fit: cover; display: block;">
+<img src="docs/assets/gallery/botix_uno_2026_07/photo_front_left.jpg" height="400" style="object-fit: cover; display: block;">
 
 **Open‑source educational mobile robot project**
 
@@ -48,10 +48,10 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 </tr>
 
 <tr>
-<td style="padding: 0;"><img src="docs/assets/botix_uno_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/botix_uno_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/botix_esp32_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/botix_esp32_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/botix_uno_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/botix_uno_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/botix_esp32_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/botix_esp32_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 
 <tr valign="top">
@@ -102,7 +102,7 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 
 </div>
 
-> View [printable parts table](docs/printable_parts.md)
+> View printable parts in [catalog](docs/catalog.md)
 
 <br><br>
 
