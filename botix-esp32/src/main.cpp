@@ -70,6 +70,7 @@ void kf::main(kf::Init &init) {
 
     static botix::system::BehaviorSystem system_behavior{{
         .operational{
+            .config = system_config.user.operational_behavior,
             .mixer_service{
                 .config = system_config.device.mixer_service,
                 .control_input = system_telemetry.incoming.control_input,
@@ -78,6 +79,7 @@ void kf::main(kf::Init &init) {
             .wheel_motor_right = system_unit.registry.wheel_motor.get(botix::unit::Registry::SideMount::Right),
             .servo_claw = system_unit.registry.servo.get(botix::unit::Registry::ManipulatorMount::Claw),
             .servo_arm = system_unit.registry.servo.get(botix::unit::Registry::ManipulatorMount::Arm),
+            .lidar = system_unit.registry.lidar,
         },
     }};
 

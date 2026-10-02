@@ -58,6 +58,11 @@ struct OutgoingTelemetry :
 
         using kf::mixin::Configured<Config>::Configured;
 
+        /// @brief Time mark when value was updated
+        [[nodiscard]] constexpr auto timestamp() const noexcept {
+            return _timestamp;
+        }
+
         [[nodiscard]] constexpr T const &value() const noexcept {
             return _value;
         }
@@ -78,6 +83,7 @@ struct OutgoingTelemetry :
     private:
         kf::Timer _timer{this->config().timer};
         T _value{};
+        kf::units::Milliseconds _timestamp{};
 
         KF_IMPL_POLL(Topic<T>);
         void pollImpl(kf::units::Milliseconds now) noexcept {
@@ -87,6 +93,7 @@ struct OutgoingTelemetry :
 
             if (auto const maybe_value = this->invoke(); maybe_value.isSome()) {
                 _value = maybe_value.unwrap();
+                _timestamp = now;
             }
         }
     };
