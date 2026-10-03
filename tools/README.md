@@ -6,6 +6,7 @@ Automation scripts for the Botix monorepo.
 | ------------------------------------------ | ------------------------------------------------------------------------------- |
 | [`render.py`](render.py)                   | Render an OBJ model to PNG via POV‑Ray, one or more views at once.              |
 | [`preview_render.mak`](preview_render.mak) | Makefile: mass‑render every `.obj` from `artifacts/` into `artifacts/preview/`. |
+| [`fixfcstd.py`](fixfcstd.py)               | Rewrite external file paths inside FreeCAD project files                        |
 
 ## License
 
