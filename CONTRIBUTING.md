@@ -1,5 +1,7 @@
 # Contributing to Botix
 
+> **[Read this in Russian](CONTRIBUTING.ru.md)**
+
 Thank you for your interest in contributing to Botix! Whether you are fixing a typo, proposing a new feature, or improving the hardware design – your help is invaluable. This document outlines the workflow and expectations for all contributors.
 
 ---
@@ -40,13 +42,14 @@ The project uses a single long‑lived branch and short‑lived working branches
 
 Each subsystem keeps its own contribution rules in its `README.md`. Read the one for the part of the project you are touching before opening a PR.
 
-| Subsystem           | Rules                                                                                                                 |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Hardware (KiCad)    | [`ecad/README.md`](ecad/README.md)                                                                                    |
-| 3D Models (FreeCAD) | [`mcad/README.md`](mcad/README.md)                                                                                    |
-| Documentation       | [`docs/README.md`](docs/README.md)                                                                                    |
-| ESP32 Firmware      | [`botix-esp32/README.md`](botix-esp32/README.md) and [`docs/firmware_contributing.md`](docs/firmware_contributing.md) |
-| Scripts             | [`tools/README.md`](tools/README.md)                                                                                  |
+| Subsystem       | Rules                                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Documentation   | [`docs/README.md`](docs/README.md)                                                                                    |
+| CAD Reference   | [`cadref/README.md`](cadref/README.md)                                                                                |
+| Electronics     | [`ecad/README.md`](ecad/README.md)                                                                                    |
+| Mechanics       | [`mcad/README.md`](mcad/README.md)                                                                                    |
+| ESP32 Firmware  | [`botix-esp32/README.md`](botix-esp32/README.md) and [`docs/firmware_contributing.md`](docs/firmware_contributing.md) |
+| Tooling Scripts | [`tools/README.md`](tools/README.md)                                                                                  |  |
 
 > Nothing subsystem‑specific is duplicated in this file.
 
@@ -69,7 +72,7 @@ Each subsystem keeps its own contribution rules in its `README.md`. Read the one
 Planned checks on every PR against `main`:
 
 - **Markdown and scripts** – validation of formatting and syntax.
-- **MCAD pipeline** – triggered by changes under `mcad/`. Regenerates printable STEP files from `mcad/src/` and part renders for the documentation. Rendering is incremental.
+- **MCAD pipeline** – triggered by changes under `mcad/`. Regenerates printable STEP files from `mcad/` and part renders for the documentation. Rendering is incremental.
 - **Firmware build** – triggered by changes under `botix-esp32/`.
 
 Once CI produces commits to `docs/assets/`, do not be alarmed – this is expected. Pull before continuing your work.

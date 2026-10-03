@@ -110,62 +110,32 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 
 ## Hardware
 
-<table>
-<tr>
-<td align="center">
-
-**Electronics**
-
-</td>
-<td align="center">
-
-**Mechanics**
-
-</td>
-</tr>
-
-<tr valign="top">
-<td>
-
-- **Controller** - any Arduino‑compatible board (Arduino UNO, ESP32, etc.).  
-  See the [assembly guide](docs/assembly_guide.md) for specific models and wiring.
-
-- **Power board** - custom design, powered by 3x14500 cells (3S).  
-  Three independent regulators:  
-  - 2 x Mini560 Pro (5V)  
-  - 1 x LM2596S module (adjustable)  
-
-  Variants (see gallery for photos):  
-  - [PCB manufacturing](docs/gallery.md#botix_power_v2_pcb_order_2026_07) - production order  
-  - [DIY toner transfer (double‑sided)](docs/gallery.md#botix_power_v2_ttm_double_2026_07)  
-  - [DIY toner transfer (single‑sided)](docs/gallery.md#botix_power_v2_ttm_single_2026_07)
-
-</td>
-<td>
-
-- All 3D models are in [`mcad/`](mcad/).  
-- Main assembly: `mcad/src/botix.fcstd`.  
-- Off‑the‑shelf component models are in `mcad/lib/`.  
-
-</td>
-</tr>
-
-<tr>
-<td align="center">
-
-[docs](ecad/README.md)
-
-</td>
-<td align="center">
-
-[docs](mcad/README.md)
-
-</td>
-</tr>
-
-</table>
-
 </div>
+
+### Electronics
+
+- **Controller** - any Developing board (Arduino UNO, ESP32, etc.). See the [assembly guide](docs/assembly_guide.md) for specific models and wiring.
+- **Power board** - custom design, powered by 3×14500 cells (3S). Three independent regulators: 2 × Mini560 Pro (5V), 1 × LM2596S module (adjustable). Variants:
+  - [PCB manufacturing](docs/gallery.md#botix_power_v2_pcb_order_2026_07) - production order
+  - [DIY toner transfer (double-sided)](docs/gallery.md#botix_power_v2_ttm_double_2026_07)
+  - [DIY toner transfer (single-sided)](docs/gallery.md#botix_power_v2_ttm_single_2026_07)
+
+See [`ecad/README.md`](ecad/README.md).
+
+### Mechanics
+
+- All 3D models are in [`mcad/`](mcad/).
+- [One Main assembly](mcad/botix.fcstd).
+- [Chassis](mcad/chassis/) and [attachments](mcad/attachments).
+
+See [`mcad/README.md`](mcad/README.md).
+
+### External models
+
+- Live in [`cadref/`](cadref/).
+- Models of purchased components used as references to check fit.
+
+See [`cadref/README.md`](cadref/README.md).
 
 > For visual references of different robot configurations and hardware revisions, see the [project gallery](docs/gallery.md).
 
@@ -253,7 +223,7 @@ The **[modular firmware](botix-esp32/)** for the Advanced variant is written in 
 </div>
 
 1. Read the [assembly guide](docs/assembly_guide.md).
-2. Print parts from [`mcad/src/`](mcad/src/). Printable STEP files are attached to the [releases](../../releases).
+2. Print parts from [`mcad/`](mcad/). Printable STEP files are attached to the [releases](../../releases).
 3. Refer to schematics in [`ecad/`](ecad/) to assemble the electronics.
 4. - For Basic: write and upload your own Arduino sketch using the motor shield library.
    - For Advanced: go to [`botix-esp32/`](botix-esp32/) and follow the firmware guide.
@@ -265,7 +235,7 @@ Before you start, make sure you have the following software installed:
 | CAD (mechanics)   | FreeCAD    | 1.1.x   |
 | CAD (electronics) | KiCad      | 10.x.x  |
 | Slicer            | OrcaSlicer | 2.4.x   |
-| Firmware build    | PlatformIO | 6.1.19  |
+| Firmware build    | PlatformIO | 6.1.20  |
 | Scripts runtime   | Python     | 3.14.x  |
 | Render engine     | POV-Ray    | 3.7.x   |
 
@@ -294,8 +264,9 @@ Found a bug? Have an idea? Open an Issue or submit a Pull Request.
 | **Any Markdown file** | [CC BY-SA 4.0](docs/LICENSE)            | Overview, documentation                            |
 | `docs/`               | [CC BY-SA 4.0](docs/LICENSE)            | Project documentation.                             |
 | `docs/assets/`        | [CC BY-SA 4.0](docs/LICENSE)            | Images, photos, and renders used in documentation. |
+| `cadref/`             | [CERN-OHL-S-2.0](cadref/LICENSE)        | External models of purchased components.           |
+| `mcad/`               | [CERN-OHL-S-2.0](mcad/LICENSE)          | Project parts and assemblies in FreeCAD.           |
 | `ecad/`               | [CERN-OHL-S-2.0](ecad/LICENSE)          | PCB sources in KiCad.                              |
-| `mcad/`               | [CERN-OHL-S-2.0](mcad/LICENSE)          | 3D models in FreeCAD.                              |
 | `botix-esp32/`        | [GPL-3.0-or-later](botix-esp32/LICENSE) | Advanced ESP32 firmware source.                    |
 | `tools/`              | [GPL-3.0-or-later](tools/LICENSE)       | Automation scripts.                                |
 

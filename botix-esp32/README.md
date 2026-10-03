@@ -1,5 +1,7 @@
 # Botix: ESP32 Mobile Robot Firmware
 
+> **[Read this in Russian](README.ru.md)**
+
 **Botix-esp32** is a modular, C++20 firmware for ESP32‑based mobile robots. It provides a flexible bridge between low‑level hardware (motors, encoders, lidar, servos) and high‑level controllers (ROS 2, PC applications) via configurable transports and protocols.
 
 This firmware is part of the [Botix monorepo](https://github.com/KiraFlux/botix) and lives in `botix-esp32/`. 

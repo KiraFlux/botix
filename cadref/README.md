@@ -1,6 +1,8 @@
 # CAD Reference
 
-Reusable models of purchased components and common shapes. Independent geometry - other subsystems may reference these files, but nothing here depends on them.
+> **[Read this in Russian](README.ru.md)**
+
+Reusable models of purchased components and common shapes. Independent geometry - other subsystems may reference these files.
 
 ## Directory Structure
 

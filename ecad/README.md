@@ -1,5 +1,7 @@
 # Electronics (KiCad)
 
+> **[Read this in Russian](README.ru.md)**
+
 Source files for all Botix PCBs.
 
 ## Directory Structure

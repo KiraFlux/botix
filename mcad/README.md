@@ -1,5 +1,7 @@
 # Mechanics (FreeCAD)
 
+> **[Read this in Russian](README.ru.md)**
+
 Source files for all mechanical parts, assemblies and the main assembly of the Botix robot.
 
 ## Directory Structure

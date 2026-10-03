@@ -1,5 +1,7 @@
 # Tools
 
+> **[Read this in Russian](README.ru.md)**
+
 Automation scripts for the Botix monorepo.
 
 | Script                                     | Purpose                                                                         |

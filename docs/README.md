@@ -1,5 +1,7 @@
 # Documentation
 
+> **[Read this in Russian](README.ru.md)**
+
 Technical documentation for the Botix robot project: parts registry, visual gallery, assembly guide, and firmware developer guidelines.
 
 ## Directory Structure
@@ -16,7 +18,7 @@ Technical documentation for the Botix robot project: parts registry, visual gall
 
 - **Language**: English. Russian only in `*.ru.md` files.
 - **Style**: neutral, concise. No emojis, no exclamation marks.
-- **Format**: Markdown. Relative links only. No absolute GitHub URLs.
+- **Format**: Markdown. Likely relative links.
 - **Images**: stored under `assets/`, referenced with `<img>` tags. Width fixed per context (150 px in catalog tables, 300 px in gallery grids, 400 px for hero).
 - **Names**: `lower_case` for parts and anchors. Underscores between words. No spaces in filenames.
 - **Dates**: `YYYY_MM` in folder and section names (`botix_uno_2026_07`, not `botix-uno-2026-07` or `07/2026`).
