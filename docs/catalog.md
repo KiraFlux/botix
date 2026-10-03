@@ -17,49 +17,49 @@ Registry of parts, tools and consumables used in the Botix project.
   <td style="padding: 0;"><img src="assets/catalog/chassis/platform_front_top_right.png" width="150"></td>
   <td><a id="platform"></a>platform</td>
   <td>chassis</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/chassis/platform_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/platform.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/deck_front_top_right.png" width="150"></td>
   <td><a id="deck"></a>deck</td>
   <td>chassis</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/chassis/deck_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/deck.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/nose_deck_front_top_right.png" width="150"></td>
   <td><a id="nose_deck"></a>nose_deck</td>
   <td>chassis</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/chassis/nose_deck_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/nose_deck.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/frame_small_front_top_right.png" width="150"></td>
-  <td><a id="frame_small"></a>frame_small</td>
+  <td style="padding: 0;"><img src="assets/catalog/chassis/frame_front_top_right.png" width="150"></td>
+  <td><a id="frame"></a>frame</td>
   <td>chassis</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/chassis/frame_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/frame.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/side_wall_small_front_top_right.png" width="150"></td>
-  <td><a id="side_wall_small"></a>side_wall_small</td>
+  <td style="padding: 0;"><img src="assets/catalog/chassis/side_wall_front_top_right.png" width="150"></td>
+  <td><a id="side_wall"></a>side_wall</td>
   <td>chassis</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/chassis/side_wall_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/side_wall.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/rear_wall_front_top_right.png" width="150"></td>
   <td><a id="rear_wall"></a>rear_wall</td>
   <td>chassis</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/chassis/rear_wall_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/rear_wall.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/felt_support_front_top_right.png" width="150"></td>
   <td><a id="felt_support"></a>felt_support</td>
   <td>chassis</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/attachments/felt_support_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/felt_support.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 
@@ -67,21 +67,21 @@ Registry of parts, tools and consumables used in the Botix project.
   <td style="padding: 0;"><img src="assets/catalog/mount/sharp_mount_front_top_right.png" width="150"></td>
   <td><a id="sharp_mount"></a>sharp_mount</td>
   <td>mount</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/attachments/sharp_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/sharp_mount.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/mount/sharp_cover_front_top_right.png" width="150"></td>
   <td><a id="sharp_cover"></a>sharp_cover</td>
   <td>mount</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/attachments/sharp_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/sharp_cover.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/mount/hscr04_mount_front_top_right.png" width="150"></td>
   <td><a id="hscr04_mount"></a>hscr04_mount</td>
   <td>mount</td>
-  <td>WIP</td>
+  <td><a href="../mcad/src/attachments/hscr04_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/hscr04_mount.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 
@@ -89,14 +89,14 @@ Registry of parts, tools and consumables used in the Botix project.
   <td style="padding: 0;"><img src="assets/catalog/fastener/bushing_m3_front_top_right.png" width="150"></td>
   <td><a id="bushing_m3"></a>bushing_m3</td>
   <td>fastener</td>
-  <td>WIP</td>
+  <td><a href="../mcad/lib/fasteners.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/bushing_m3.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/fastener/short_bushing_m3_front_top_right.png" width="150"></td>
   <td><a id="short_bushing_m3"></a>short_bushing_m3</td>
   <td>fastener</td>
-  <td>WIP</td>
+  <td><a href="../mcad/lib/fasteners.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/short_bushing_m3.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
@@ -143,11 +143,11 @@ Registry of parts, tools and consumables used in the Botix project.
 </tr>
 
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/actuator/motor_jga25_370.jpg" width="150"></td>
-  <td><a id="motor_jga25_370"></a>motor_jga25_370</td>
+  <td style="padding: 0;"><img src="assets/catalog/actuator/motor_jga25.jpg" width="150"></td>
+  <td><a id="motor_jga25"></a>motor_jga25</td>
   <td>actuator</td>
-  <td>jga25-370</td>
-  <td>12 v, 1:150, with encoder</td>
+  <td>jga25</td>
+  <td>6-12 v, 77-170 RPM, with encoder</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/actuator/servo_mg90s.jpg" width="150"></td>
@@ -180,18 +180,11 @@ Registry of parts, tools and consumables used in the Botix project.
 </tr>
 
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/power/pcb_power_v2.jpg" width="150"></td>
-  <td><a id="pcb_power_v2"></a>pcb_power_v2</td>
+  <td style="padding: 0;"><img src="assets/catalog/power/botix_power_v2.jpg" width="150"></td>
+  <td><a id="botix_power_v2"></a>botix_power_v2</td>
   <td>power</td>
   <td>2026.07</td>
   <td>ttm / order</td>
-</tr>
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/power/pcb_power_v1.jpg" width="150"></td>
-  <td><a id="pcb_power_v1"></a>pcb_power_v1</td>
-  <td>power</td>
-  <td>2025.09</td>
-  <td>ttm</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/power/holder_14500_3s.jpg" width="150"></td>
