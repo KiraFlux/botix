@@ -10,7 +10,7 @@
 
 ---
 
-> **Read this in Russian: [README.ru.md](README.ru.md)**
+> **[Read this in Russian](README.ru.md)**
 
 <br><br>
 
@@ -86,13 +86,13 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 <td colspan="2" align="center">
 
 [more_photos](docs/gallery.md#botix_uno_2026_07), 
-[assembly_guide](docs/assembly_guide.md#basic-setup)
+[assembly_guide](docs/assembly_guide.md)
 
 </td>
 <td colspan="2" align="center">
 
 [more_photos](docs/gallery.md#botix_esp32_2026_07), 
-[assembly_guide](docs/assembly_guide.md#advanced-setup), 
+[assembly_guide](docs/assembly_guide.md), 
 [firmware_docs](botix-esp32/README.md)
 
 </td>
@@ -102,7 +102,7 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 
 </div>
 
-> View printable parts in [catalog](docs/catalog.md)
+> View the [printable parts catalog](docs/catalog.md).
 
 <br><br>
 
@@ -144,8 +144,8 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 <td>
 
 - All 3D models are in [`mcad/`](mcad/).  
-- Main assembly: `mcad/botix.fcstd`.  
-- Off‑the‑shelf component models are in `mcad/models/` (motors, servos, sensors, boards).  
+- Main assembly: `mcad/src/botix.fcstd`.  
+- Off‑the‑shelf component models are in `mcad/lib/`.  
 
 </td>
 </tr>
@@ -153,14 +153,12 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 <tr>
 <td align="center">
 
-[docs](ecad/README.md),
-[bill_of_materials](docs/assembly_guide.md#electronics)
+[docs](ecad/README.md)
 
 </td>
 <td align="center">
 
-[docs](mcad/README.md),
-[generate_printable_files](tools/export_printable_models.py)
+[docs](mcad/README.md)
 
 </td>
 </tr>
@@ -224,7 +222,6 @@ The **[modular firmware](botix-esp32/)** for the Advanced variant is written in 
 </td>
 <td align="center">
 
-
 </td>
 </tr>
 
@@ -256,8 +253,8 @@ The **[modular firmware](botix-esp32/)** for the Advanced variant is written in 
 </div>
 
 1. Read the [assembly guide](docs/assembly_guide.md).
-2. Print parts from `mcad/`.
-3. Refer to schematics in `ecad/` to assemble the electronics.
+2. Print parts from [`mcad/src/`](mcad/src/). Printable STEP files are attached to the [releases](../../releases).
+3. Refer to schematics in [`ecad/`](ecad/) to assemble the electronics.
 4. - For Basic: write and upload your own Arduino sketch using the motor shield library.
    - For Advanced: go to [`botix-esp32/`](botix-esp32/) and follow the firmware guide.
 
@@ -270,6 +267,7 @@ Before you start, make sure you have the following software installed:
 | Slicer            | OrcaSlicer | 2.4.x   |
 | Firmware build    | PlatformIO | 6.1.19  |
 | Scripts runtime   | Python     | 3.14.x  |
+| Render engine     | POV-Ray    | 3.7.x   |
 
 > All tools are free and open‑source.
 
@@ -291,7 +289,6 @@ Found a bug? Have an idea? Open an Issue or submit a Pull Request.
 
 ## Repository Structure & Licensing
 
-
 | Path                  | License                                 | Description                                        |
 | --------------------- | --------------------------------------- | -------------------------------------------------- |
 | **Any Markdown file** | [CC BY-SA 4.0](docs/LICENSE)            | Overview, documentation                            |
@@ -305,11 +302,3 @@ Found a bug? Have an idea? Open an Issue or submit a Pull Request.
 </div>
 
 > Full texts of all licenses are provided in the respective directories.
-
----
-
-<br><br>
-
-<div align="center">
-
-</div>

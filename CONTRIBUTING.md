@@ -62,23 +62,23 @@ Each subsystem keeps its own contribution rules in its `README.md`. Read the one
 
 ---
 
-## What CI Does
+## Continuous Integration
 
-> CI WIP
+> Not implemented yet. Will be added as the project matures.
 
-To avoid surprises, here is what happens automatically on push and PR:
+Planned checks on every PR against `main`:
 
-- **Markdown, scripts, and general checks** run on every PR against `main`.
-- **MCAD pipeline** runs when files under `mcad/` or `tools/` change. It regenerates printable STEP files from `mcad/src/` and part renders for the documentation, and commits updated renders back to `docs/assets/`. Rendering is incremental: only parts whose geometry actually changed are re‑rendered.
-- **Firmware build** runs when files under `botix-esp32/` change.
+- **Markdown and scripts** – validation of formatting and syntax.
+- **MCAD pipeline** – triggered by changes under `mcad/`. Regenerates printable STEP files from `mcad/src/` and part renders for the documentation. Rendering is incremental.
+- **Firmware build** – triggered by changes under `botix-esp32/`.
 
-If CI produces commits to `docs/assets/`, do not be alarmed – this is expected. Pull before continuing your work if you are on a long‑lived branch.
+Once CI produces commits to `docs/assets/`, do not be alarmed – this is expected. Pull before continuing your work.
 
 ---
 
 ## License
 
-This file is part of the project documentation and is licensed under [CC BY-SA 4.0](docs/LICENSE).
+This file is part of the project documentation and is licensed under [CC BY‑SA 4.0](docs/LICENSE).
 
 ---
 

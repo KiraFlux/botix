@@ -17,49 +17,49 @@ Registry of parts, tools and consumables used in the Botix project.
   <td style="padding: 0;"><img src="assets/catalog/chassis/platform_front_top_right.png" width="150"></td>
   <td><a id="platform"></a>platform</td>
   <td>chassis</td>
-  <td><a href="../mcad/export/platform.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/deck_front_top_right.png" width="150"></td>
   <td><a id="deck"></a>deck</td>
   <td>chassis</td>
-  <td><a href="../mcad/export/deck.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/nose_deck_front_top_right.png" width="150"></td>
   <td><a id="nose_deck"></a>nose_deck</td>
   <td>chassis</td>
-  <td><a href="../mcad/export/nose_deck.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/frame_small_front_top_right.png" width="150"></td>
   <td><a id="frame_small"></a>frame_small</td>
   <td>chassis</td>
-  <td><a href="../mcad/export/frame_small.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/side_wall_small_front_top_right.png" width="150"></td>
   <td><a id="side_wall_small"></a>side_wall_small</td>
   <td>chassis</td>
-  <td><a href="../mcad/export/side_wall_small.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/rear_wall_front_top_right.png" width="150"></td>
   <td><a id="rear_wall"></a>rear_wall</td>
   <td>chassis</td>
-  <td><a href="../mcad/export/rear_wall.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/chassis/felt_support_front_top_right.png" width="150"></td>
   <td><a id="felt_support"></a>felt_support</td>
   <td>chassis</td>
-  <td><a href="../mcad/export/felt_support.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 
@@ -67,21 +67,21 @@ Registry of parts, tools and consumables used in the Botix project.
   <td style="padding: 0;"><img src="assets/catalog/mount/sharp_mount_front_top_right.png" width="150"></td>
   <td><a id="sharp_mount"></a>sharp_mount</td>
   <td>mount</td>
-  <td><a href="../mcad/export/sharp_mount.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/mount/sharp_cover_front_top_right.png" width="150"></td>
   <td><a id="sharp_cover"></a>sharp_cover</td>
   <td>mount</td>
-  <td><a href="../mcad/export/sharp_cover.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/mount/hscr04_mount_front_top_right.png" width="150"></td>
   <td><a id="hscr04_mount"></a>hscr04_mount</td>
   <td>mount</td>
-  <td><a href="../mcad/export/hscr04_mount.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 
@@ -89,14 +89,14 @@ Registry of parts, tools and consumables used in the Botix project.
   <td style="padding: 0;"><img src="assets/catalog/fastener/bushing_m3_front_top_right.png" width="150"></td>
   <td><a id="bushing_m3"></a>bushing_m3</td>
   <td>fastener</td>
-  <td><a href="../mcad/export/bushing_m3.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/fastener/short_bushing_m3_front_top_right.png" width="150"></td>
   <td><a id="short_bushing_m3"></a>short_bushing_m3</td>
   <td>fastener</td>
-  <td><a href="../mcad/export/short_bushing_m3.stp">.stp</a></td>
+  <td>WIP</td>
   <td>printed</td>
 </tr>
 <tr>

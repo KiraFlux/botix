@@ -238,10 +238,6 @@ flowchart TB
 
 ---
 
-## Contributing
-
-If you want to contribute to the firmware, please read the [general contributing guidelines](../CONTRIBUTING.md) and the [Firmware section](../CONTRIBUTING.md#firmware-botix-esp32) for specific rules.
-
 ## License
 
 This README file is part of the project documentation and is licensed under [CC BY-SA 4.0](../docs/LICENSE).

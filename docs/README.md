@@ -1,30 +1,30 @@
 # Documentation
 
-Technical documentation for the Botix robot project: assembly guide, part lists, 3D printing settings, electrical schematics, and visual assets.
+Technical documentation for the Botix robot project: parts registry, visual gallery, assembly guide, and firmware developer guidelines.
 
 ## Directory Structure
 
-| Path                                                   | Description                                                                                     |
-| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| `assets/`                                              | Images, renders, and photographs used in the documentation.                                     |
-| [`gallery.md`](gallery.md)                             | Visual gallery of robot iterations and hardware revisions.                                      |
-| [`printable_parts.md`](printable_parts.md)             | List of printable parts                                                                         |
-| [`firmware_contributing.md`](firmware_contributing.md) | Detailed guidelines for firmware developers (code style, architecture, V‑codes).                |
-| [`assembly_guide.md`](assembly_guide.md)               | Step‑by‑step assembly instructions with photos and diagrams.  *(not implemented yet)*           |
-| (future)                                               | Electrical schematics, Bill of Materials (BOM), print profiles, and other technical references. |
+| Path                                                   | Description                                                    |
+| ------------------------------------------------------ | -------------------------------------------------------------- |
+| `assets/`                                              | Images, renders, and photographs used in the documentation.    |
+| [`catalog.md`](catalog.md)                             | Registry of parts, tools, and consumables used in the project. |
+| [`gallery.md`](gallery.md)                             | Dated log of robot iterations and hardware revisions.          |
+| [`assembly_guide.md`](assembly_guide.md)               | Step‑by‑step assembly instructions. *WIP*                      |
+| [`firmware_contributing.md`](firmware_contributing.md) | Guidelines for firmware developers.                            |
 
-## Usage
+## Writing Rules
 
-1. Start with [`assembly_guide.md`](assembly_guide.md) to build the robot.
-2. Refer to `assets/` for visual references and illustrations.
-3. Additional documentation (e.g., BOM, wiring diagrams) will be added here as the project evolves.
-
-## Contributing
-
-If you want to improve the documentation, please read the [general contributing guidelines](../CONTRIBUTING.md) and the [Documentation section](../CONTRIBUTING.md#documentation-docs) for specific rules.
+- **Language**: English. Russian only in `*.ru.md` files.
+- **Style**: neutral, concise. No emojis, no exclamation marks.
+- **Format**: Markdown. Relative links only. No absolute GitHub URLs.
+- **Images**: stored under `assets/`, referenced with `<img>` tags. Width fixed per context (150 px in catalog tables, 300 px in gallery grids, 400 px for hero).
+- **Names**: `lower_case` for parts and anchors. Underscores between words. No spaces in filenames.
+- **Dates**: `YYYY_MM` in folder and section names (`botix_uno_2026_07`, not `botix-uno-2026-07` or `07/2026`).
+- **Anchors**: an anchor must match its visible text exactly — `<a id="platform"></a>platform`. Used for cross‑references from other documents.
+- **Check before commit**: spelling, working links, no broken anchors, no references to removed files.
 
 ## License
 
-This README file and all other documentation in the `docs/` directory are licensed under **Creative Commons Attribution‑ShareAlike 4.0 International (CC BY‑SA 4.0)** – see the [full license text](LICENSE) for details.
+This README and all other documentation in `docs/` are licensed under **CC BY‑SA 4.0** – see the [LICENSE](LICENSE) file for the full text.
 
-For the complete licensing information of all project components, including hardware and firmware, refer to the [root repository README](../README.md#repository-structure--licensing).
+For the complete licensing information of all project components, refer to the [root repository README](../README.md#repository-structure--licensing).
