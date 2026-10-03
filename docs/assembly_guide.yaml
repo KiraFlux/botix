@@ -1,0 +1,241 @@
+# CATALOG NAME LIST
+#
+# CHASSIS        :  platform deck nose_deck frame side_wall rear_wall
+# ATTACHMENTS    :  felt_support sharp_mount sharp_cover hcsr04_mount mg996r_joint_mount mg996r_joint_link
+# FASTENERS      :  bushing_m3x6 bushing_m3x2 nut_hex_m3 screw_pan_m3x10 screw_csk_m3x8 screw_csk_m3x20 screw_pan_m4x8 screw_set_m3x4
+# MECHANICAL     :  hex_coupler_m4x18 wheel_rc_d52 horn_6arm
+# ACTUATOR       :  jga25 mg90s mg996r
+# POWER          :  botix_power_v2
+# DEVBOARD       :  uno_r3
+# ELECTRONICS    :  iarduino_motor_shield dcdc_mini560pro dcdc_lm2596s cap_35v_470uf
+# SENSOR         :  sharp_gp2y0a41sk0f iarduino_tcrt5000 hcsr04
+# INTERCONNECT   :  holder_14500_3s wire_dupont_3p wire_jst_3p wire_power wire_jga25 header_dupont_4x1 breadboard_170p term_3_5mm_2p_green term_5_0mm_2p_blue term_5_0mm_2p_red
+# TOOL           :  hex_key phillips_ph0
+# CONSUMABLE     :  solder_wire heat_shrink felt filament_petg paper_ttm
+
+
+# ATTACHMENT GUIDES
+
+
+felt_support_asm:
+  "00": # TODO: consider splitting into two steps
+    add:
+      - felt_support@1
+      - nut_hex_m3@2
+      - felt@1
+    notes: |
+      Insert 2 nuts and the felt pad into the corresponding pockets of felt_support.
+
+
+sharp_asm:
+  "00": # TODO: photo shows only 2 nuts; verify placement of the 3rd nut
+    add:
+      - sharp_mount@1
+      - nut_hex_m3@3
+    notes: |
+      Insert 3 nuts into the pockets of sharp_mount.
+
+  "01":
+    add:
+      - sharp_gp2y0a41sk0f@1
+      - screw_pan_m3x10@2
+    notes: |
+      Mount the sensor with 2 screws.
+
+
+hcsr04_asm:
+  "00":
+    add:
+      - hcsr04_mount@1
+      - nut_hex_m3@1
+    notes: |
+      Insert nut into pocket of hcsr04_mount.
+  
+  "01":
+    add:
+      - hcsr04@1
+    notes: |
+      Insert sensor into mount.
+
+
+mg996r_joint_asm:
+  "00":
+    add:
+      - mg996r_joint_mount@1
+      - nut_hex_m3@4
+    notes: |
+      Insert 4 nuts into the pockets of mg996r_joint_mount.
+
+  "01":
+    add:
+      - mg996r@1
+      - screw_pan_m3x10@2
+    notes: |
+      Fix servo on mount with 2 screws.
+  
+  "02":
+    add:
+      - horn_6arm@1
+      - mg996r_joint_link@1
+      - screw_pan_m3x10@1
+    notes: |
+      Attach link on star-shaped servo horn and fix it with screw
+
+
+# CHASSIS SUBASSEMBLIES GUIDES
+
+
+deck_asm_uno:
+  "00": # TODO: consider splitting into two steps
+    add:
+      - uno_r3@1
+      - screw_csk_m3x20@4
+      - bushing_m3x6@4
+    notes: |
+      Insert 4 screws through the mounting holes of the UNO board from the top side.
+      Bushings are fitted on the bottom side.
+
+  "01":
+    add:
+      - deck@1
+      - nut_hex_m3@4
+    notes: |
+      Mount the pre-assembly onto deck. Tighten the nuts.
+
+  "02":
+    add:
+      - iarduino_motor_shield@1
+    notes: |
+      Place the motor shield onto the UNO devboard.
+
+
+frame_asm:
+  "00":
+    add:
+      - frame@1
+      - nut_hex_m3@2
+    notes: |
+      Insert 2 nuts into the pockets of frame.
+      Both nuts must lie on the same imaginary axis (see photo).
+
+
+side_wall_asm:
+  "00":
+    add:
+      - side_wall@1
+      - nut_hex_m3@3
+    notes: |
+      Insert 3 nuts into the pockets of side_wall.
+
+  "01": # TODO: consider splitting into two steps
+    add:
+      - jga25@1
+      - screw_csk_m3x8@2
+      - hex_coupler_m4x18@1
+      - screw_set_m3x4@2
+    notes: |
+      Mount the motor onto the wall with 2 screws.
+      The motor connector must face away from the wall opening (toward the end where the wall terminates sooner).
+      Install the hex coupler onto the motor shaft.
+      The set screw axis must be perpendicular to the flat (D-cut) on the motor shaft.
+
+
+rear_wall_asm:
+  "00": # TODO: consider splitting into two steps
+    add:
+      - botix_power_v2@1
+      - screw_csk_m3x20@4
+      - bushing_m3x6@4
+    notes: |
+      Insert 4 screws into the mounting holes of the power board from the front side.
+      Install 4 bushings on the opposite side.
+
+  "01":
+    add:
+      - rear_wall@1
+      - nut_hex_m3@1
+    notes: |
+      Attach the pre-assembly to rear_wall using the screws. Tighten the nuts.
+
+
+# BOTIX ROBOT ASSEMBLES VARIANT GUIDES
+
+
+botix_basic:
+  "00":
+    add:
+      - side_wall_asm@2
+    notes: |
+      Assemble the left and right side walls (mirrored configuration).
+
+  "01":
+    add:
+      - side_wall_asm@1
+    notes: |
+      Attach the rear wall.
+
+  "02":
+    add:
+      - screw_csk_m3x8@2
+    notes: |
+      Fix the rear wall with 2 screws.
+
+  "03": # TODO: consider splitting into two steps
+    add:
+      - frame_asm@2
+      - platform@1
+    notes: |
+      Attach the platform to the subassembly using the slots.
+      Attach the frames to the platform.
+
+  "04":
+    add:
+      - screw_pan_m4x8@5
+    notes: |
+      Fix the frames with 5 screws.
+
+  "05":
+    add:
+      - felt_support_asm@2
+      - screw_pan_m3x10@4
+    notes: |
+      Mount the felt supports onto the platform with 4 screws.
+
+  "06": # TODO: confirm whether to renumber the split steps
+    add:
+      - wheel_rc_d52@2
+      - screw_pan_m4x8@2
+
+      - deck_asm_uno@1
+      - screw_csk_m3x8@4
+    notes: |
+      Mount the wheels onto the couplers with 2 screws.
+      Attach the deck and fix it with 4 screws.
+
+  "07":
+    add:
+      - wire_power@1
+    notes: |
+      Connect the power module to the motor shield.
+
+  "08":
+    add:
+      - wire_jga25@2
+    notes: |
+      Connect the motor-encoder connectors to the motor shield.
+
+  "09": # TODO: consider splitting into 4 steps (line sensors / sharp assembly, wiring)
+    add:
+      - iarduino_tcrt5000@2
+      - nut_hex_m3@2
+      - screw_pan_m3x10@2
+      
+      - wire_dupont_3p@2
+
+      - sharp_asm@1
+      - screw_pan_m3x10@1
+
+      - wire_jst_3p@1
+    notes: |
+      Mount the line sensors and connect them to the motor shield.
+      Mount the sharp assembly and connect it to the motor shield.

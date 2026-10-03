@@ -16,7 +16,7 @@ This gallery provides a curated visual overview of the Botix mobile robot projec
 <tr nowrap>
   <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_back_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
   <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_left_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+  <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_back_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
   <td style="padding: 0;"><img src="assets/gallery/botix_esp32_2026_07/photo_right.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 <tr nowrap>
@@ -58,6 +58,8 @@ Current basic-robot version. Chassis with low frames and side walls. Color schem
   <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_etching_end.jpg" height="300" style="object-fit: cover; display: block;"></td>
   <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/photo_copper_against_light.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
+</table>
+<table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
 <tr nowrap>
   <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/sch_top.jpg" height="300" style="object-fit: cover; display: block;"></td>
   <td style="padding: 0;"><img src="assets/gallery/botix_power_v2_ttm_double_2026_07/render_top.jpg" height="300" style="object-fit: cover; display: block;"></td>

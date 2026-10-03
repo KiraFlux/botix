@@ -14,298 +14,333 @@ Registry of parts, tools and consumables used in the Botix project.
 </tr>
 
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/platform_front_top_right.png" width="150"></td>
-  <td><a id="platform"></a>platform</td>
+  <td style="padding: 0;"><img src="assets/catalog/chassis/platform.png" width="150"></td>
+  <td><a id="platform"></a><code>platform</code></td>
   <td>chassis</td>
   <td><a href="../mcad/chassis/platform_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/platform.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/deck_front_top_right.png" width="150"></td>
-  <td><a id="deck"></a>deck</td>
+  <td style="padding: 0;"><img src="assets/catalog/chassis/deck.png" width="150"></td>
+  <td><a id="deck"></a><code>deck</code></td>
   <td>chassis</td>
   <td><a href="../mcad/chassis/deck_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/deck.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/nose_deck_front_top_right.png" width="150"></td>
-  <td><a id="nose_deck"></a>nose_deck</td>
+  <td style="padding: 0;"><img src="assets/catalog/chassis/nose_deck.png" width="150"></td>
+  <td><a id="nose_deck"></a><code>nose_deck</code></td>
   <td>chassis</td>
   <td><a href="../mcad/chassis/nose_deck_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/nose_deck.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/frame_front_top_right.png" width="150"></td>
-  <td><a id="frame"></a>frame</td>
+  <td style="padding: 0;"><img src="assets/catalog/chassis/frame.png" width="150"></td>
+  <td><a id="frame"></a><code>frame</code></td>
   <td>chassis</td>
   <td><a href="../mcad/chassis/frame_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/frame.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/side_wall_front_top_right.png" width="150"></td>
-  <td><a id="side_wall"></a>side_wall</td>
+  <td style="padding: 0;"><img src="assets/catalog/chassis/side_wall.png" width="150"></td>
+  <td><a id="side_wall"></a><code>side_wall</code></td>
   <td>chassis</td>
   <td><a href="../mcad/chassis/side_wall_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/side_wall.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/rear_wall_front_top_right.png" width="150"></td>
-  <td><a id="rear_wall"></a>rear_wall</td>
+  <td style="padding: 0;"><img src="assets/catalog/chassis/rear_wall.png" width="150"></td>
+  <td><a id="rear_wall"></a><code>rear_wall</code></td>
   <td>chassis</td>
   <td><a href="../mcad/chassis/rear_wall_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/rear_wall.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/chassis/felt_support_front_top_right.png" width="150"></td>
-  <td><a id="felt_support"></a>felt_support</td>
-  <td>chassis</td>
+  <td style="padding: 0;"><img src="assets/catalog/attachments/felt_support.png" width="150"></td>
+  <td><a id="felt_support"></a><code>felt_support</code></td>
+  <td>attachment</td>
   <td><a href="../mcad/attachments/felt_support_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/felt_support.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/mount/sharp_mount_front_top_right.png" width="150"></td>
-  <td><a id="sharp_mount"></a>sharp_mount</td>
-  <td>mount</td>
+  <td style="padding: 0;"><img src="assets/catalog/attachments/sharp_mount.png" width="150"></td>
+  <td><a id="sharp_mount"></a><code>sharp_mount</code></td>
+  <td>attachment</td>
   <td><a href="../mcad/attachments/sharp_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/sharp_mount.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/mount/sharp_cover_front_top_right.png" width="150"></td>
-  <td><a id="sharp_cover"></a>sharp_cover</td>
-  <td>mount</td>
+  <td style="padding: 0;"><img src="assets/catalog/attachments/sharp_cover.png" width="150"></td>
+  <td><a id="sharp_cover"></a><code>sharp_cover</code></td>
+  <td>attachment</td>
   <td><a href="../mcad/attachments/sharp_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/sharp_cover.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/mount/hscr04_mount_front_top_right.png" width="150"></td>
-  <td><a id="hscr04_mount"></a>hscr04_mount</td>
-  <td>mount</td>
-  <td><a href="../mcad/attachments/hscr04_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/hscr04_mount.stp">.stp</a></td>
+  <td style="padding: 0;"><img src="assets/catalog/attachments/hcsr04_mount.png" width="150"></td>
+  <td><a id="hcsr04_mount"></a><code>hcsr04_mount</code></td>
+  <td>attachment</td>
+  <td><a href="../mcad/attachments/hcsr04_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/hcsr04_mount.stp">.stp</a></td>
+  <td>printed</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/attachments/mg996r_joint_mount.png" width="150"></td>
+  <td><a id="mg996r_joint_mount"></a><code>mg996r_joint_mount</code></td>
+  <td>attachment</td>
+  <td><a href="../mcad/attachments/mg996r_joint_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/mg996r_joint_mount.stp">.stp</a></td>
+  <td>printed</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/attachments/mg996r_joint_link.png" width="150"></td>
+  <td><a id="mg996r_joint_link"></a><code>mg996r_joint_link</code></td>
+  <td>attachment</td>
+  <td><a href="../mcad/attachments/mg996r_joint_asm.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/mg996r_joint_link.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fastener/bushing_m3_front_top_right.png" width="150"></td>
-  <td><a id="bushing_m3"></a>bushing_m3</td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/bushing_m3x6.png" width="150"></td>
+  <td><a id="bushing_m3x6"></a><code>bushing_m3x6</code></td>
   <td>fastener</td>
-  <td><a href="../cadref/fasteners.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/bushing_m3.stp">.stp</a></td>
+  <td><a href="../cadref/fasteners.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/bushing_m3x6.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fastener/short_bushing_m3_front_top_right.png" width="150"></td>
-  <td><a id="short_bushing_m3"></a>short_bushing_m3</td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/bushing_m3x2.png" width="150"></td>
+  <td><a id="bushing_m3x2"></a><code>bushing_m3x2</code></td>
   <td>fastener</td>
-  <td><a href="../cadref/fasteners.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/short_bushing_m3.stp">.stp</a></td>
+  <td><a href="../cadref/fasteners.fcstd">.fcstd</a><br><a href="https://github.com/KiraFlux/botix/releases/latest/download/bushing_m3x2.stp">.stp</a></td>
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fastener/screw_m4x8_shcs.jpg" width="150"></td>
-  <td><a id="screw_m4x8_shcs"></a>screw_m4x8_shcs</td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/nut_hex_m3.jpg" width="150"></td>
+  <td><a id="nut_hex_m3"></a><code>nut_hex_m3</code></td>
   <td>fastener</td>
-  <td>iso 4762 / din 912 / гост 11738-84</td>
-  <td>m4 × 8, socket head cap</td>
-</tr>
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/fastener/screw_m3x10_shcs.jpg" width="150"></td>
-  <td><a id="screw_m3x10_shcs"></a>screw_m3x10_shcs</td>
-  <td>fastener</td>
-  <td>iso 4762 / din 912 / гост 11738-84</td>
-  <td>m3 × 10, socket head cap</td>
-</tr>
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/fastener/screw_m3x8_csk.jpg" width="150"></td>
-  <td><a id="screw_m3x8_csk"></a>screw_m3x8_csk</td>
-  <td>fastener</td>
-  <td>iso 10642 / din 7991 / гост 17475-80</td>
-  <td>m3 × 8, countersunk</td>
-</tr>
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/fastener/screw_m3x20_csk.jpg" width="150"></td>
-  <td><a id="screw_m3x20_csk"></a>screw_m3x20_csk</td>
-  <td>fastener</td>
-  <td>iso 10642 / din 7991 / гост 17475-80</td>
-  <td>m3 × 20, countersunk</td>
-</tr>
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/fastener/set_screw_m3.jpg" width="150"></td>
-  <td><a id="set_screw_m3x4"></a>set_screw_m3x4</td>
-  <td>fastener</td>
-  <td>iso 4026 / din 913 / гост 1476-93</td>
-  <td>m3 × 4, headless</td>
-</tr>
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/fastener/nut_m3_hex.jpg" width="150"></td>
-  <td><a id="nut_m3_hex"></a>nut_m3_hex</td>
-  <td>fastener</td>
-  <td>iso 4032 / din 934 / гост 5915-70</td>
+  <td>iso 4032</td>
   <td>m3, hex</td>
 </tr>
-
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/actuator/motor_jga25.jpg" width="150"></td>
-  <td><a id="motor_jga25"></a>motor_jga25</td>
-  <td>actuator</td>
-  <td>jga25</td>
-  <td>6-12 v, 77-170 RPM, with encoder</td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_csk_m3x8.jpg" width="150"></td>
+  <td><a id="screw_csk_m3x8"></a><code>screw_csk_m3x8</code></td>
+  <td>fastener</td>
+  <td>iso 7046</td>
+  <td>m3 × 8, countersunk, phillips</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/actuator/servo_mg90s.jpg" width="150"></td>
-  <td><a id="servo_mg90s"></a>servo_mg90s</td>
-  <td>actuator</td>
-  <td>mg90s</td>
-  <td>4.8–6 v, metal gear</td>
-</tr>
-
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/mechanical/wheel_rc_d52.jpg" width="150"></td>
-  <td><a id="wheel_rc_d52"></a>wheel_rc_d52</td>
-  <td>mechanical</td>
-  <td>d52 rim / 67 mm tyre</td>
-  <td></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_csk_m3x20.jpg" width="150"></td>
+  <td><a id="screw_csk_m3x20"></a><code>screw_csk_m3x20</code></td>
+  <td>fastener</td>
+  <td>iso 7046</td>
+  <td>m3 × 20, countersunk, phillips</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/mechanical/coupler_hex.jpg" width="150"></td>
-  <td><a id="coupler_hex"></a>coupler_hex</td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_pan_m3x10.jpg" width="150"></td>
+  <td><a id="screw_pan_m3x10"></a><code>screw_pan_m3x10</code></td>
+  <td>fastener</td>
+  <td>iso 7045</td>
+  <td>m3 × 10, pan head, phillips</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_pan_m4x8.jpg" width="150"></td>
+  <td><a id="screw_pan_m4x8"></a><code>screw_pan_m4x8</code></td>
+  <td>fastener</td>
+  <td>iso 7045</td>
+  <td>m4 × 8, pan head, phillips</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_set_m3x4.jpg" width="150"></td>
+  <td><a id="screw_set_m3x4"></a><code>screw_set_m3x4</code></td>
+  <td>fastener</td>
+  <td>iso 4026</td>
+  <td>m3 × 4, headless, hex socket</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/mechanical/hex_coupler_m4x18.jpg" width="150"></td>
+  <td><a id="hex_coupler_m4x18"></a><code>hex_coupler_m4x18</code></td>
   <td>mechanical</td>
   <td>brass, hex</td>
   <td></td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/mechanical/caster_ball.jpg" width="150"></td>
-  <td><a id="caster_ball"></a>caster_ball</td>
+  <td style="padding: 0;"><img src="assets/catalog/mechanical/wheel_rc_d52.jpg" width="150"></td>
+  <td><a id="wheel_rc_d52"></a><code>wheel_rc_d52</code></td>
   <td>mechanical</td>
-  <td></td>
+  <td>d52 rim / 67 mm tyre</td>
   <td></td>
 </tr>
-
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/mechanical/horn_6arm.jpg" width="150"></td>
+  <td><a id="horn_6arm"></a><code>horn_6arm</code></td>
+  <td>mechanical</td>
+  <td>6-arm, 25T spline</td>
+  <td>servo horn, bundled with mg996r</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/actuator/jga25.jpg" width="150"></td>
+  <td><a id="jga25"></a><code>jga25</code></td>
+  <td>actuator</td>
+  <td>jga25</td>
+  <td>6-12 v, 77-170 RPM, with encoder</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/actuator/mg996r.jpg" width="150"></td>
+  <td><a id="mg996r"></a><code>mg996r</code></td>
+  <td>actuator</td>
+  <td>mg996r</td>
+  <td>4.8–6 v, metal gear</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/actuator/mg90s.jpg" width="150"></td>
+  <td><a id="mg90s"></a><code>mg90s</code></td>
+  <td>actuator</td>
+  <td>mg90s</td>
+  <td>4.8–6 v, metal gear</td>
+</tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/power/botix_power_v2.jpg" width="150"></td>
-  <td><a id="botix_power_v2"></a>botix_power_v2</td>
+  <td><a id="botix_power_v2"></a><code>botix_power_v2</code></td>
   <td>power</td>
   <td>2026.07</td>
   <td>ttm / order</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/power/holder_14500_3s.jpg" width="150"></td>
-  <td><a id="holder_14500_3s"></a>holder_14500_3s</td>
-  <td>power</td>
-  <td>3s 14500</td>
-  <td></td>
-</tr>
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/power/dcdc_mini560pro.jpg" width="150"></td>
-  <td><a id="dcdc_mini560pro"></a>dcdc_mini560pro</td>
-  <td>power</td>
-  <td>mini560 pro</td>
-  <td>5 v out</td>
-</tr>
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/power/dcdc_lm2596s.jpg" width="150"></td>
-  <td><a id="dcdc_lm2596s"></a>dcdc_lm2596s</td>
-  <td>power</td>
-  <td>lm2596s</td>
-  <td>adjustable, with voltmeter</td>
-</tr>
-
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/control/mcu_uno_r3.jpg" width="150"></td>
-  <td><a id="mcu_uno_r3"></a>mcu_uno_r3</td>
-  <td>control</td>
-  <td>arduino uno r3</td>
+  <td style="padding: 0;"><img src="assets/catalog/devboard/uno_r3.jpg" width="150"></td>
+  <td><a id="uno_r3"></a><code>uno_r3</code></td>
+  <td>devboard</td>
+  <td>UNO R3</td>
   <td>atmega328p</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/control/shield_motor_iarduino.jpg" width="150"></td>
-  <td><a id="shield_motor_iarduino"></a>shield_motor_iarduino</td>
-  <td>control</td>
-  <td>iarduino motor shield</td>
-  <td></td>
-</tr>
-
-<tr>
-  <td style="padding: 0;"><img src="assets/catalog/sensor/sensor_sharp_gp2y0a.jpg" width="150"></td>
-  <td><a id="sensor_sharp_gp2y0a"></a>sensor_sharp_gp2y0a</td>
+  <td style="padding: 0;"><img src="assets/catalog/sensors/sharp_gp2y0a41sk0f.jpg" width="150"></td>
+  <td><a id="sharp_gp2y0a41sk0f"></a><code>sharp_gp2y0a41sk0f</code></td>
   <td>sensor</td>
   <td>gp2y0a</td>
   <td>analogue, 10–80 cm</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/sensor/sensor_line_iarduino.jpg" width="150"></td>
-  <td><a id="sensor_line_iarduino"></a>sensor_line_iarduino</td>
+  <td style="padding: 0;"><img src="assets/catalog/sensors/hcsr04.jpg" width="150"></td>
+  <td><a id="hcsr04"></a><code>hcsr04</code></td>
+  <td>sensor</td>
+  <td>HC-SR04</td>
+  <td>ultrasonic, 2–400 cm</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/sensors/iarduino_tcrt5000.jpg" width="150"></td>
+  <td><a id="iarduino_tcrt5000"></a><code>iarduino_tcrt5000</code></td>
   <td>sensor</td>
   <td>iarduino line sensor</td>
   <td>analogue</td>
 </tr>
-
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/interconnect/holder_14500_3s.jpg" width="150"></td>
+  <td><a id="holder_14500_3s"></a><code>holder_14500_3s</code></td>
+  <td>interconnect</td>
+  <td>3s 14500</td>
+  <td></td>
+</tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/wire_dupont_3p.jpg" width="150"></td>
-  <td><a id="wire_dupont_3p"></a>wire_dupont_3p</td>
+  <td><a id="wire_dupont_3p"></a><code>wire_dupont_3p</code></td>
   <td>interconnect</td>
   <td>2.54 mm, 3-pin, f-f</td>
   <td>dupont</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/wire_jst_3p.jpg" width="150"></td>
-  <td><a id="wire_jst_3p"></a>wire_jst_3p</td>
+  <td><a id="wire_jst_3p"></a><code>wire_jst_3p</code></td>
   <td>interconnect</td>
   <td>jst ph 2.0 mm, 3-pin</td>
   <td></td>
 </tr>
 <tr>
+  <td style="padding: 0;"><img src="assets/catalog/interconnect/wire_power.jpg" width="150"></td>
+  <td><a id="wire_power"></a><code>wire_power</code></td>
+  <td>interconnect</td>
+  <td>avg20, 15 cm, 5 mm stripped/tinned</td>
+  <td></td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/interconnect/wire_jga25.jpg" width="150"></td>
+  <td><a id="wire_jga25"></a><code>wire_jga25</code></td>
+  <td>interconnect</td>
+  <td>jst ph 2.0 mm, 6-pin => 2× motor (stripped/tinned) + 4× encoder (2.54 dupont socket)</td>
+  <td></td>
+</tr>
+<tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/header_dupont_4x1.jpg" width="150"></td>
-  <td><a id="header_dupont_4x1"></a>header_dupont_4x1</td>
+  <td><a id="header_dupont_4x1"></a><code>header_dupont_4x1</code></td>
   <td>interconnect</td>
   <td>2.54 mm, 1x4, male</td>
   <td></td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/breadboard_170p.jpg" width="150"></td>
-  <td><a id="breadboard_170p"></a>breadboard_170p</td>
+  <td><a id="breadboard_170p"></a><code>breadboard_170p</code></td>
   <td>interconnect</td>
   <td>170 points</td>
   <td>solderless</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/term_3_5mm_2p_green.jpg" width="150"></td>
-  <td><a id="term_3_5mm_2p_green"></a>term_3_5mm_2p_green</td>
+  <td><a id="term_3_5mm_2p_green"></a><code>term_3_5mm_2p_green</code></td>
   <td>interconnect</td>
   <td>3.5 mm, 2-pin</td>
   <td>green</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/term_5_0mm_2p_blue.png" width="150"></td>
-  <td><a id="term_5_0mm_2p_blue"></a>term_5_0mm_2p_blue</td>
+  <td><a id="term_5_0mm_2p_blue"></a><code>term_5_0mm_2p_blue</code></td>
   <td>interconnect</td>
   <td>5.0 mm, 2-pin</td>
   <td>blue</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/term_5_0mm_2p_red.png" width="150"></td>
-  <td><a id="term_5_0mm_2p_red"></a>term_5_0mm_2p_red</td>
+  <td><a id="term_5_0mm_2p_red"></a><code>term_5_0mm_2p_red</code></td>
   <td>interconnect</td>
   <td>5.0 mm, 2-pin</td>
   <td>red</td>
 </tr>
-
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/component/cap_35v_470uf.jpg" width="150"></td>
-  <td><a id="cap_35v_470uf"></a>cap_35v_470uf</td>
-  <td>component</td>
+  <td style="padding: 0;"><img src="assets/catalog/electronics/iarduino_motor_shield.jpg" width="150"></td>
+  <td><a id="iarduino_motor_shield"></a><code>iarduino_motor_shield</code></td>
+  <td>electronics</td>
+  <td>iarduino motor shield</td>
+  <td></td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/electronics/dcdc_mini560pro.jpg" width="150"></td>
+  <td><a id="dcdc_mini560pro"></a><code>dcdc_mini560pro</code></td>
+  <td>electronics</td>
+  <td>mini560 pro</td>
+  <td>5 v out</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/electronics/dcdc_lm2596s.jpg" width="150"></td>
+  <td><a id="dcdc_lm2596s"></a><code>dcdc_lm2596s</code></td>
+  <td>electronics</td>
+  <td>lm2596s</td>
+  <td>adjustable, with voltmeter</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/electronics/cap_35v_470uf.jpg" width="150"></td>
+  <td><a id="cap_35v_470uf"></a><code>cap_35v_470uf</code></td>
+  <td>electronics</td>
   <td>35 v, 470 µf</td>
   <td>electrolytic</td>
 </tr>
 
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/tool/tool_hex_key.jpg" width="150"></td>
-  <td><a id="tool_hex_key"></a>tool_hex_key</td>
+  <td style="padding: 0;"><img src="assets/catalog/tool/hex_key.jpg" width="150"></td>
+  <td><a id="hex_key"></a><code>hex_key</code></td>
   <td>tool</td>
   <td></td>
   <td>1.5 mm</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/tool/tool_phillips_ph0.jpg" width="150"></td>
-  <td><a id="tool_phillips_ph0"></a>tool_phillips_ph0</td>
+  <td style="padding: 0;"><img src="assets/catalog/tool/phillips_ph0.jpg" width="150"></td>
+  <td><a id="phillips_ph0"></a><code>phillips_ph0</code></td>
   <td>tool</td>
   <td></td>
   <td>ph0</td>
@@ -313,35 +348,35 @@ Registry of parts, tools and consumables used in the Botix project.
 
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/consumable/solder_wire.jpg" width="150"></td>
-  <td><a id="solder_wire"></a>solder_wire</td>
+  <td><a id="solder_wire"></a><code>solder_wire</code></td>
   <td>consumable</td>
   <td>sn60pb40</td>
   <td>0.8 mm</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/consumable/heat_shrink.jpg" width="150"></td>
-  <td><a id="heat_shrink"></a>heat_shrink</td>
+  <td><a id="heat_shrink"></a><code>heat_shrink</code></td>
   <td>consumable</td>
   <td></td>
   <td>assorted</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/consumable/felt.jpg" width="150"></td>
-  <td><a id="felt"></a>felt</td>
+  <td><a id="felt"></a><code>felt</code></td>
   <td>consumable</td>
   <td></td>
   <td></td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/consumable/filament_petg.jpg" width="150"></td>
-  <td><a id="filament_petg"></a>filament_petg</td>
+  <td><a id="filament_petg"></a><code>filament_petg</code></td>
   <td>consumable</td>
   <td></td>
   <td>1.75 mm</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/consumable/paper_ttm.jpg" width="150"></td>
-  <td><a id="paper_ttm"></a>paper_ttm</td>
+  <td><a id="paper_ttm"></a><code>paper_ttm</code></td>
   <td>consumable</td>
   <td></td>
   <td>toner transfer</td>
