@@ -153,16 +153,16 @@ Registry of parts, tools and consumables used in the Botix project.
   <td>m4 × 8, pan head, phillips</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_set_m3x4.jpg" width="150"></td>
-  <td><a id="screw_set_m3x4"></a><code>screw_set_m3x4</code></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_set_m4x4.jpg" width="150"></td>
+  <td><a id="screw_set_m4x4"></a><code>screw_set_m4x4</code></td>
   <td>fastener</td>
   <td>iso 4026</td>
   <td>m3 × 4, headless, hex socket</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/mechanical/hex_coupler_m4x18.jpg" width="150"></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/hex_coupler_m4x18.jpg" width="150"></td>
   <td><a id="hex_coupler_m4x18"></a><code>hex_coupler_m4x18</code></td>
-  <td>mechanical</td>
+  <td>fastener</td>
   <td>brass, hex</td>
   <td></td>
 </tr>
@@ -185,21 +185,21 @@ Registry of parts, tools and consumables used in the Botix project.
   <td><a id="jga25"></a><code>jga25</code></td>
   <td>actuator</td>
   <td>jga25</td>
-  <td>6-12 v, 77-170 RPM, with encoder</td>
+  <td>6-12 V, 77-170 RPM, with encoder</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/actuator/mg996r.jpg" width="150"></td>
   <td><a id="mg996r"></a><code>mg996r</code></td>
   <td>actuator</td>
   <td>mg996r</td>
-  <td>4.8–6 v, metal gear</td>
+  <td>4.8–6 V, metal gear</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/actuator/mg90s.jpg" width="150"></td>
   <td><a id="mg90s"></a><code>mg90s</code></td>
   <td>actuator</td>
   <td>mg90s</td>
-  <td>4.8–6 v, metal gear</td>
+  <td>4.8–6 V, metal gear</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/power/botix_power_v2.jpg" width="150"></td>
@@ -244,6 +244,13 @@ Registry of parts, tools and consumables used in the Botix project.
   <td>analogue</td>
 </tr>
 <tr>
+  <td style="padding: 0;"><img src="assets/catalog/sensors/ld06.jpg" width="150"></td>
+  <td><a id="ld06"></a><code>ld06</code></td>
+  <td>sensor</td>
+  <td>LDROBOT LD06</td>
+  <td>lidar, 360°, uart</td>
+</tr>
+<tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/holder_14500_3s.jpg" width="150"></td>
   <td><a id="holder_14500_3s"></a><code>holder_14500_3s</code></td>
   <td>interconnect</td>
@@ -263,6 +270,13 @@ Registry of parts, tools and consumables used in the Botix project.
   <td>interconnect</td>
   <td>jst ph 2.0 mm, 3-pin</td>
   <td></td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/interconnect/wire_ld06.jpg" width="150"></td>
+  <td><a id="wire_ld06"></a><code>wire_ld06</code></td>
+  <td>interconnect</td>
+  <td>jst ph 1.0 mm, 4-pin =&gt; 4× dupont socket</td>
+  <td>pigtail for ld06</td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/wire_power.jpg" width="150"></td>
@@ -342,6 +356,13 @@ Registry of parts, tools and consumables used in the Botix project.
   <td></td>
 </tr>
 <tr>
+  <td style="padding: 0;"><img src="assets/catalog/electronics/drv8871_module.jpg" width="150"></td>
+  <td><a id="drv8871_module"></a><code>drv8871_module</code></td>
+  <td>electronics</td>
+  <td>DRV8871</td>
+  <td>3.6–45 V, 3.6 A peak, h-bridge</td>
+</tr>
+<tr>
   <td style="padding: 0;"><img src="assets/catalog/electronics/dcdc_mini560pro.jpg" width="150"></td>
   <td><a id="dcdc_mini560pro"></a><code>dcdc_mini560pro</code></td>
   <td>electronics</td>
@@ -359,7 +380,7 @@ Registry of parts, tools and consumables used in the Botix project.
   <td style="padding: 0;"><img src="assets/catalog/electronics/cap_35v_470uf.jpg" width="150"></td>
   <td><a id="cap_35v_470uf"></a><code>cap_35v_470uf</code></td>
   <td>electronics</td>
-  <td>35 v, 470 µf</td>
+  <td>35 V, 470 µf</td>
   <td>electrolytic</td>
 </tr>
 

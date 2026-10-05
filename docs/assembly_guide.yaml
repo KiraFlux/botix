@@ -2,14 +2,14 @@
 #
 # CHASSIS        :  platform deck nose_deck frame side_wall rear_wall
 # ATTACHMENTS    :  felt_support sharp_mount sharp_cover hcsr04_mount mg996r_joint_mount mg996r_joint_link
-# FASTENERS      :  bushing_m3x6 bushing_m3x2 nut_hex_m3 screw_pan_m3x10 screw_csk_m3x8 screw_csk_m3x20 screw_pan_m4x8 screw_set_m3x4
-# MECHANICAL     :  hex_coupler_m4x18 wheel_rc_d52 horn_6arm
-# ACTUATOR       :  jga25 mg90s mg996r
+# FASTENERS      :  bushing_m3x6 bushing_m3x2 nut_hex_m3 screw_csk_m3x8 screw_csk_m3x20 screw_pan_m3x10 screw_pan_m4x8 screw_set_m4x4 hex_coupler_m4x18
+# MECHANICAL     :  wheel_rc_d52 horn_6arm
+# ACTUATOR       :  jga25 mg996r mg90s
 # POWER          :  botix_power_v2
 # DEVBOARD       :  uno_r3 esp32
-# ELECTRONICS    :  iarduino_motor_shield l298n_module dcdc_mini560pro dcdc_lm2596s cap_35v_470uf
-# SENSOR         :  sharp_gp2y0a41sk0f iarduino_tcrt5000 hcsr04
-# INTERCONNECT   :  holder_14500_3s wire_dupont_3p wire_jst_3p wire_power wire_jga25 header_dupont_4x1 header_dupont_angle_2x1 breadboard_170p esp32_expansion_board term_3_5mm_2p_green term_5_0mm_2p_blue term_5_0mm_2p_red
+# ELECTRONICS    :  iarduino_motor_shield l298n_module drv8871_module dcdc_mini560pro dcdc_lm2596s cap_35v_470uf
+# SENSOR         :  sharp_gp2y0a41sk0f hcsr04 iarduino_tcrt5000 ld06
+# INTERCONNECT   :  holder_14500_3s wire_dupont_3p wire_jst_3p wire_ld06 wire_power wire_jga25 header_dupont_4x1 header_dupont_angle_2x1 breadboard_170p esp32_expansion_board term_3_5mm_2p_green term_5_0mm_2p_blue term_5_0mm_2p_red
 # TOOL           :  hex_key phillips_ph0
 # CONSUMABLE     :  solder_wire heat_shrink felt filament_petg paper_ttm
 
@@ -132,7 +132,7 @@ side_wall_asm:
       - jga25@1
       - screw_csk_m3x8@2
       - hex_coupler_m4x18@1
-      - screw_set_m3x4@2
+      - screw_set_m4x4@2
     notes: |
       Mount the motor onto the wall with 2 screws.
       The motor connector must face away from the wall opening (toward the end where the wall terminates sooner).
