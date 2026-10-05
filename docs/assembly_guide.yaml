@@ -6,10 +6,10 @@
 # MECHANICAL     :  hex_coupler_m4x18 wheel_rc_d52 horn_6arm
 # ACTUATOR       :  jga25 mg90s mg996r
 # POWER          :  botix_power_v2
-# DEVBOARD       :  uno_r3
-# ELECTRONICS    :  iarduino_motor_shield dcdc_mini560pro dcdc_lm2596s cap_35v_470uf
+# DEVBOARD       :  uno_r3 esp32
+# ELECTRONICS    :  iarduino_motor_shield l298n_module dcdc_mini560pro dcdc_lm2596s cap_35v_470uf
 # SENSOR         :  sharp_gp2y0a41sk0f iarduino_tcrt5000 hcsr04
-# INTERCONNECT   :  holder_14500_3s wire_dupont_3p wire_jst_3p wire_power wire_jga25 header_dupont_4x1 breadboard_170p term_3_5mm_2p_green term_5_0mm_2p_blue term_5_0mm_2p_red
+# INTERCONNECT   :  holder_14500_3s wire_dupont_3p wire_jst_3p wire_power wire_jga25 header_dupont_4x1 header_dupont_angle_2x1 breadboard_170p esp32_expansion_board term_3_5mm_2p_green term_5_0mm_2p_blue term_5_0mm_2p_red
 # TOOL           :  hex_key phillips_ph0
 # CONSUMABLE     :  solder_wire heat_shrink felt filament_petg paper_ttm
 

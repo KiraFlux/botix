@@ -1,6 +1,10 @@
+<div align="center">
+
 # Catalog
 
 Registry of parts, tools and consumables used in the Botix project.
+ 
+</div>
 
 > `name` is both the visible text and the anchor: link X from other docs as `[X](catalog.md#X)`.
 
@@ -212,6 +216,13 @@ Registry of parts, tools and consumables used in the Botix project.
   <td>atmega328p</td>
 </tr>
 <tr>
+  <td style="padding: 0;"><img src="assets/catalog/devboard/esp32.jpg" width="150"></td>
+  <td><a id="esp32"></a><code>esp32</code></td>
+  <td>devboard</td>
+  <td>ESP32</td>
+  <td></td>
+</tr>
+<tr>
   <td style="padding: 0;"><img src="assets/catalog/sensors/sharp_gp2y0a41sk0f.jpg" width="150"></td>
   <td><a id="sharp_gp2y0a41sk0f"></a><code>sharp_gp2y0a41sk0f</code></td>
   <td>sensor</td>
@@ -264,7 +275,7 @@ Registry of parts, tools and consumables used in the Botix project.
   <td style="padding: 0;"><img src="assets/catalog/interconnect/wire_jga25.jpg" width="150"></td>
   <td><a id="wire_jga25"></a><code>wire_jga25</code></td>
   <td>interconnect</td>
-  <td>jst ph 2.0 mm, 6-pin => 2× motor (stripped/tinned) + 4× encoder (2.54 dupont socket)</td>
+  <td>jst ph 2.0 mm, 6-pin =&gt; 2× motor (stripped/tinned) + 4× encoder (2.54 dupont socket)</td>
   <td></td>
 </tr>
 <tr>
@@ -275,11 +286,25 @@ Registry of parts, tools and consumables used in the Botix project.
   <td></td>
 </tr>
 <tr>
+  <td style="padding: 0;"><img src="assets/catalog/interconnect/header_dupont_angle_2x1.jpg" width="150"></td>
+  <td><a id="header_dupont_angle_2x1"></a><code>header_dupont_angle_2x1</code></td>
+  <td>interconnect</td>
+  <td>2.54 mm, 2x1, male, right-angle</td>
+  <td></td>
+</tr>
+<tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/breadboard_170p.jpg" width="150"></td>
   <td><a id="breadboard_170p"></a><code>breadboard_170p</code></td>
   <td>interconnect</td>
   <td>170 points</td>
   <td>solderless</td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/interconnect/esp32_expansion_board.jpg" width="150"></td>
+  <td><a id="esp32_expansion_board"></a><code>esp32_expansion_board</code></td>
+  <td>interconnect</td>
+  <td></td>
+  <td></td>
 </tr>
 <tr>
   <td style="padding: 0;"><img src="assets/catalog/interconnect/term_3_5mm_2p_green.jpg" width="150"></td>
@@ -307,6 +332,13 @@ Registry of parts, tools and consumables used in the Botix project.
   <td><a id="iarduino_motor_shield"></a><code>iarduino_motor_shield</code></td>
   <td>electronics</td>
   <td>iarduino motor shield</td>
+  <td></td>
+</tr>
+<tr>
+  <td style="padding: 0;"><img src="assets/catalog/electronics/l298n_module.jpg" width="150"></td>
+  <td><a id="l298n_module"></a><code>l298n_module</code></td>
+  <td>electronics</td>
+  <td>L298N</td>
   <td></td>
 </tr>
 <tr>
