@@ -4,7 +4,7 @@
 
 # Botix
 
-<img src="docs/assets/gallery/botix_uno_2026_07/photo_front_left.jpg" height="400" style="object-fit: cover; display: block;">
+<img src="docs/assets/gallery/2026_07_botix_uno/photo_front_left.jpg" height="400" style="object-fit: cover; display: block;">
 
 **Открытый образовательный проект мобильного робота**
 
@@ -25,7 +25,7 @@
 Проект разработан для школьных кружков робототехники, подготовки к олимпиадам (ВсОШ, МОШ, РРО) и быстрого прототипирования на хакатонах. Все детали печатаются на 3D-принтере, электронные компоненты недороги и широко доступны.
 
 - Два ходовых двигателя с энкодерами (JGA25 12В, 77–170 об/мин).
-- Опциональный [манипулятор с двумя степенями свободы](docs/gallery.md#botix_esp32_2026_05) (рука + захват).
+- Опциональный [манипулятор с двумя степенями свободы](docs/gallery.md#2026_05_botix_esp32) (рука + захват).
 - Шасси печатается примерно за 5 часов на стандартном FDM-принтере; плоские детали, соединение шип-паз с фиксацией винтами.
 
 <br><br>
@@ -50,10 +50,10 @@
 </tr>
 
 <tr>
-<td style="padding: 0;"><img src="docs/assets/gallery/botix_uno_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/gallery/botix_uno_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/gallery/botix_esp32_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/gallery/botix_esp32_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/2026_07_botix_uno/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/2026_07_botix_uno/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/2026_07_botix_esp32/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/2026_07_botix_esp32/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 
 <tr valign="top">
@@ -87,13 +87,13 @@
 <tr>
 <td colspan="2" align="center">
 
-[больше_фото](docs/gallery.md#botix_uno_2026_07), 
+[больше_фото](docs/gallery.md#2026_07_botix_uno), 
 [руководство_по_сборке](docs/assembly_guide.md)
 
 </td>
 <td colspan="2" align="center">
 
-[больше_фото](docs/gallery.md#botix_esp32_2026_07), 
+[больше_фото](docs/gallery.md#2026_07_botix_esp32), 
 [руководство_по_сборке](docs/assembly_guide.md), 
 [документация_прошивки](botix-esp32/README.md)
 
@@ -118,9 +118,9 @@
 
 - **Контроллер** — любая отладочная плата (Arduino UNO, ESP32 и т.п.). Конкретные модели и схема подключения описаны в [руководстве по сборке](docs/assembly_guide.md).
 - **Плата питания** — собственная разработка, питание от 3×14500 (3S). Три независимых стабилизатора: 2 × Mini560 Pro (5V), 1 × модуль LM2596S (регулируемый). Варианты:
-  - [Изготовление печатной платы](docs/gallery.md#botix_power_v2_pcb_order_2026_07) — заказ на производстве
-  - [DIY тонерный перенос (двусторонний)](docs/gallery.md#botix_power_v2_ttm_double_2026_07)
-  - [DIY тонерный перенос (односторонний)](docs/gallery.md#botix_power_v2_ttm_single_2026_07)
+  - [Изготовление печатной платы](docs/gallery.md#2026_07_botix_power_v2_pcb_order) — заказ на производстве
+  - [DIY тонерный перенос (двусторонний)](docs/gallery.md#2026_07_botix_power_v2_ttm_double)
+  - [DIY тонерный перенос (односторонний)](docs/gallery.md#2026_07_botix_power_v2_ttm_single)
 
 См. [`ecad/README.md`](ecad/README.md).
 

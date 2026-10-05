@@ -2,7 +2,7 @@
 
 # Botix
 
-<img src="docs/assets/gallery/botix_uno_2026_07/photo_front_left.jpg" height="400" style="object-fit: cover; display: block;">
+<img src="docs/assets/gallery/2026_07_botix_uno/photo_front_left.jpg" height="400" style="object-fit: cover; display: block;">
 
 **Open‑source educational mobile robot project**
 
@@ -23,7 +23,7 @@
 Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, Moscow Olympiad, Russian Robotics Olympiad), and fast prototyping at hackathons. All parts are 3D‑printable, electronics are cheap and widely available.
 
 - Two drive motors with encoders (JGA25 12V, 77-170 RPM).
-- Optional [two‑degree‑of‑freedom manipulator](docs/gallery.md#botix_esp32_2026_05) (arm + gripper).
+- Optional [two‑degree‑of‑freedom manipulator](docs/gallery.md#2026_05_botix_esp32) (arm + gripper).
 - Chassis prints in ~5 hours on a standard FDM printer; flat parts, tongue‑and‑groove assembly with screws.
 
 <br><br>
@@ -48,10 +48,10 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 </tr>
 
 <tr>
-<td style="padding: 0;"><img src="docs/assets/gallery/botix_uno_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/gallery/botix_uno_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/gallery/botix_esp32_2026_07/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
-<td style="padding: 0;"><img src="docs/assets/gallery/botix_esp32_2026_07/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/2026_07_botix_uno/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/2026_07_botix_uno/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/2026_07_botix_esp32/photo_front_left.jpg" height="300" style="object-fit: cover; display: block;"></td>
+<td style="padding: 0;"><img src="docs/assets/gallery/2026_07_botix_esp32/photo_back.jpg" height="300" style="object-fit: cover; display: block;"></td>
 </tr>
 
 <tr valign="top">
@@ -85,13 +85,13 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 <tr>
 <td colspan="2" align="center">
 
-[more_photos](docs/gallery.md#botix_uno_2026_07), 
+[more_photos](docs/gallery.md#2026_07_botix_uno), 
 [assembly_guide](docs/assembly_guide.md)
 
 </td>
 <td colspan="2" align="center">
 
-[more_photos](docs/gallery.md#botix_esp32_2026_07), 
+[more_photos](docs/gallery.md#2026_07_botix_esp32), 
 [assembly_guide](docs/assembly_guide.md), 
 [firmware_docs](botix-esp32/README.md)
 
@@ -116,9 +116,9 @@ Designed for school robotics clubs, Olympiad preparation (All-Russian Olympiad, 
 
 - **Controller** - any Developing board (Arduino UNO, ESP32, etc.). See the [assembly guide](docs/assembly_guide.md) for specific models and wiring.
 - **Power board** - custom design, powered by 3×14500 cells (3S). Three independent regulators: 2 × Mini560 Pro (5V), 1 × LM2596S module (adjustable). Variants:
-  - [PCB manufacturing](docs/gallery.md#botix_power_v2_pcb_order_2026_07) - production order
-  - [DIY toner transfer (double-sided)](docs/gallery.md#botix_power_v2_ttm_double_2026_07)
-  - [DIY toner transfer (single-sided)](docs/gallery.md#botix_power_v2_ttm_single_2026_07)
+  - [PCB manufacturing](docs/gallery.md#2026_07_botix_power_v2_pcb_order) - production order
+  - [DIY toner transfer (double-sided)](docs/gallery.md#2026_07_botix_power_v2_ttm_double)
+  - [DIY toner transfer (single-sided)](docs/gallery.md#2026_07_botix_power_v2_ttm_single)
 
 See [`ecad/README.md`](ecad/README.md).
 

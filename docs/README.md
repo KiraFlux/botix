@@ -21,7 +21,7 @@ Technical documentation for the Botix robot project: parts registry, visual gall
 - **Format**: Markdown. Likely relative links.
 - **Images**: stored under `assets/`, referenced with `<img>` tags. Width fixed per context (150 px in catalog tables, 300 px in gallery grids, 400 px for hero).
 - **Names**: `lower_case` for parts and anchors. Underscores between words. No spaces in filenames.
-- **Dates**: `YYYY_MM` in folder and section names (`botix_uno_2026_07`, not `botix-uno-2026-07` or `07/2026`).
+- **Dates**: `YYYY_MM` in folder and section names (`2026_07_botix_uno`, not `botix-uno-2026-07` or `07/2026`).
 - **Anchors**: an anchor must match its visible text exactly — `<a id="platform"></a>platform`. Used for cross‑references from other documents.
 - **Check before commit**: spelling, working links, no broken anchors, no references to removed files.
 
