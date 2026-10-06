@@ -1,8 +1,42 @@
+# SPDX-FileCopyrightText: 2026 KiraFlux
+# SPDX-License-Identifier: CC-BY-SA-4.0
+# Botix — https://github.com/KiraFlux/botix
+
+# Botix assembly guide - source data for docs/assembly_guide.md
+
+# Rendered by tools/assembly_guide.py.
+# DO NOT edit docs/assembly_guide.md by hand - regenerate from this file.
+#
+# notes are partially generated. Rules:
+#
+#   Verb:
+#     wires only                    -> Connect
+#     fasteners only, prev = Attach -> Fix
+#     fasteners only                -> Insert
+#     parts/sub + fasteners         -> Mount
+#     parts/sub, no fasteners       -> Attach
+#
+#   Object name from catalog role
+#     (iarduino_motor_shield -> "motor shield",
+#      esp32 -> "devboard", jga25 -> "motor", uno_r3 -> "UNO").
+#
+#   Location from part type
+#     (nut -> pockets, screw on PCB -> mounting holes,
+#      bushing -> screw axis, felt -> pockets).
+#
+# Step fields:
+#   add   : list of parts / sub-assemblies
+#   side  : top | bottom | front | back | opposite
+#   to    : destination - position on part (corner holes, middle holes,
+#           front, rear, rear top) or port name for Connect
+#           (motor_shield, analog_ports, motor_drivers)
+#   note  : ONLY for angles, orientation, alignment, warnings
+
 # CATALOG NAME LIST
 #
 # CHASSIS        :  platform deck nose_deck frame side_wall rear_wall
 # ATTACHMENTS    :  felt_support sharp_mount sharp_cover hcsr04_mount mg996r_joint_mount mg996r_joint_link
-# FASTENERS      :  bushing_m3x6 bushing_m3x2 nut_hex_m3 screw_csk_m3x8 screw_csk_m3x20 screw_pan_m3x10 screw_pan_m4x8 screw_set_m4x4 hex_coupler_m4x18
+# FASTENERS      :  bushing_m3x6 bushing_m3x2 nut_hex_m3 washer_m3 screw_csk_m3x8 screw_csk_m3x20 screw_pan_m3x10 screw_pan_m4x8 screw_set_m4x4 hex_coupler_m4x18
 # MECHANICAL     :  wheel_rc_d52 horn_6arm
 # ACTUATOR       :  jga25 mg996r mg90s
 # POWER          :  botix_power_v2
@@ -14,228 +48,326 @@
 # CONSUMABLE     :  solder_wire heat_shrink felt filament_petg paper_ttm
 
 
+# PRE-ASSEMBLIES GUIDES
+
+uno_pre_asm(uno_r3):
+  "00":
+    add:
+      - screw_csk_m3x20@4
+    side: top
+  
+  "01":
+    add:
+      - bushing_m3x6@4
+    side: bottom
+
+
+esp32_expansion_board_pre_asm(esp32_expansion_board):
+  "00":
+    add:
+      - screw_csk_m3x20@4
+    side: top
+
+  "01":
+    add:
+      - bushing_m3x6@4
+    side: bottom
+
+
+drv8871_module_pre_asm(drv8871_module):
+  "00":
+    add:
+      - screw_pan_m3x10@1
+    side: top
+
+  "01":
+    add:
+      - bushing_m3x2@1
+    side: bottom
+
+
+botix_power_v2_pre_asm_4(botix_power_v2):
+  "00":
+    add:
+      - screw_csk_m3x20@4
+    side: front
+    to: corner holes
+
+  "01":
+    add:
+      - bushing_m3x6@4
+    side: opposite
+
+
+botix_power_v2_pre_asm_2(botix_power_v2):
+  "00":
+    add:
+      - screw_csk_m3x20@2
+    side: front
+    to: middle holes
+
+  "01":
+    add:
+      - bushing_m3x6@2
+    side: opposite
+
+
 # ATTACHMENT GUIDES
 
-
-felt_support_asm:
-  "00": # TODO: consider splitting into two steps
+felt_support_asm(felt_support):
+  "00":
     add:
-      - felt_support@1
-      - nut_hex_m3@2
       - felt@1
-    notes: |
-      Insert 2 nuts and the felt pad into the corresponding pockets of felt_support.
 
-
-sharp_asm:
-  "00": # TODO: photo shows only 2 nuts; verify placement of the 3rd nut
+  "01":
     add:
-      - sharp_mount@1
+      - nut_hex_m3@2
+
+
+sharp_asm(sharp_mount):
+  "00":
+    add:
       - nut_hex_m3@3
-    notes: |
-      Insert 3 nuts into the pockets of sharp_mount.
 
   "01":
     add:
       - sharp_gp2y0a41sk0f@1
       - screw_pan_m3x10@2
-    notes: |
-      Mount the sensor with 2 screws.
 
 
-hcsr04_asm:
+hcsr04_asm(hcsr04_mount):
   "00":
     add:
-      - hcsr04_mount@1
       - nut_hex_m3@1
-    notes: |
-      Insert nut into pocket of hcsr04_mount.
   
   "01":
     add:
       - hcsr04@1
-    notes: |
-      Insert sensor into mount.
 
 
-mg996r_joint_asm:
+mg996r_joint_asm(mg996r_joint_mount):
   "00":
     add:
-      - mg996r_joint_mount@1
       - nut_hex_m3@4
-    notes: |
-      Insert 4 nuts into the pockets of mg996r_joint_mount.
 
   "01":
     add:
       - mg996r@1
       - screw_pan_m3x10@2
-    notes: |
-      Fix servo on mount with 2 screws.
-  
+    note: |
+      Set servo to 180 deg.
+
   "02":
     add:
       - horn_6arm@1
+    note: |
+      Align splines: two opposite arms at the same height.
+
+  "03":
+    add:
       - mg996r_joint_link@1
       - screw_pan_m3x10@1
-    notes: |
-      Attach link on star-shaped servo horn and fix it with screw
 
 
 # CHASSIS SUBASSEMBLIES GUIDES
 
-
-deck_asm_uno:
-  "00": # TODO: consider splitting into two steps
+platform_asm(platform):
+  "00":
     add:
-      - uno_r3@1
-      - screw_csk_m3x20@4
-      - bushing_m3x6@4
-    notes: |
-      Insert 4 screws through the mounting holes of the UNO board from the top side.
-      Bushings are fitted on the bottom side.
+      - felt_support_asm@1
+      - screw_pan_m3x10@2
+    side: bottom
+    to: front felt support
+    note: |
+      Screw head pockets must be visible on this side.
 
   "01":
     add:
-      - deck@1
-      - nut_hex_m3@4
-    notes: |
-      Mount the pre-assembly onto deck. Tighten the nuts.
+      - frame_asm@2
+    to: front slots
 
   "02":
     add:
-      - iarduino_motor_shield@1
-    notes: |
-      Place the motor shield onto the UNO devboard.
-
-
-frame_asm:
-  "00":
-    add:
-      - frame@1
-      - nut_hex_m3@2
-    notes: |
-      Insert 2 nuts into the pockets of frame.
-      Both nuts must lie on the same imaginary axis (see photo).
-
-
-side_wall_asm:
-  "00":
-    add:
-      - side_wall@1
-      - nut_hex_m3@3
-    notes: |
-      Insert 3 nuts into the pockets of side_wall.
-
-  "01": # TODO: consider splitting into two steps
-    add:
-      - jga25@1
       - screw_csk_m3x8@2
-      - hex_coupler_m4x18@1
-      - screw_set_m4x4@2
-    notes: |
-      Mount the motor onto the wall with 2 screws.
-      The motor connector must face away from the wall opening (toward the end where the wall terminates sooner).
-      Install the hex coupler onto the motor shaft.
-      The set screw axis must be perpendicular to the flat (D-cut) on the motor shaft.
 
 
-rear_wall_asm:
-  "00": # TODO: consider splitting into two steps
+platform_asm_for_advanced(platform_asm):
+  "00":
     add:
-      - botix_power_v2@1
-      - screw_csk_m3x20@4
-      - bushing_m3x6@4
-    notes: |
-      Insert 4 screws into the mounting holes of the power board from the front side.
-      Install 4 bushings on the opposite side.
+      - felt_support_asm@1
+      - screw_pan_m3x10@2
+    to: rear felt support
 
   "01":
     add:
-      - rear_wall@1
+      - botix_power_v2_pre_asm_2@1
+      - nut_hex_m3@2
+      - washer_m3@2
+    to: rear top
+    note: |
+      Use washers.
+
+
+deck_asm_uno(deck):
+  "00":
+    add:
+      - uno_pre_asm@1
+      - nut_hex_m3@4
+
+  "01":
+    add:
+      - iarduino_motor_shield@1
+
+
+deck_asm_esp32(deck):
+  "00":
+    add:
+      - esp32_expansion_board_pre_asm@1
+      - nut_hex_m3@4
+
+  "01":
+    add:
+      - esp32@1
+
+  "02":
+    add:
+      - drv8871_module_pre_asm@2
+      - nut_hex_m3@2
+
+
+frame_asm(frame):
+  "00":
+    add:
+      - nut_hex_m3@2
+    note: |
+      Both nuts must lie on the same imaginary axis.
+
+
+side_wall_asm(side_wall):
+  "00":
+    add:
+      - nut_hex_m3@3
+
+  "01":
+    add:
+      - jga25@1
+      - screw_csk_m3x8@2
+    note: |
+      Motor connector faces away from the wall opening
+      (toward the end where the wall terminates sooner).
+
+  "02":
+    add:
+      - hex_coupler_m4x18@1
+      - screw_set_m4x4@1
+    note: |
+      Set screw axis perpendicular to the D-cut on the motor shaft.
+
+  "03":
+    add:
+      - wheel_rc_d52@1
+      - screw_pan_m4x8@1
+
+
+rear_wall_asm(rear_wall):
+  "00":
+    add:
+      - botix_power_v2_pre_asm_4@1
       - nut_hex_m3@1
-    notes: |
-      Attach the pre-assembly to rear_wall using the screws. Tighten the nuts.
 
 
 # BOTIX ROBOT ASSEMBLES VARIANT GUIDES
 
-
-botix_basic:
+botix_basic(rear_wall_asm):
   "00":
     add:
       - side_wall_asm@2
-    notes: |
-      Assemble the left and right side walls (mirrored configuration).
+    note: |
+      Left and right side walls, mirrored.
 
   "01":
     add:
-      - side_wall_asm@1
-    notes: |
-      Attach the rear wall.
-
+      - screw_csk_m3x8@2
+  
   "02":
     add:
-      - screw_csk_m3x8@2
-    notes: |
-      Fix the rear wall with 2 screws.
+      - platform_asm@1
 
-  "03": # TODO: consider splitting into two steps
+  "03":
     add:
-      - frame_asm@2
-      - platform@1
-    notes: |
-      Attach the platform to the subassembly using the slots.
-      Attach the frames to the platform.
+      - screw_csk_m3x8@5
 
   "04":
     add:
-      - screw_pan_m4x8@5
-    notes: |
-      Fix the frames with 5 screws.
+      - felt_support_asm@1
+      - screw_pan_m3x10@2
+    to: rear
 
   "05":
     add:
-      - felt_support_asm@2
-      - screw_pan_m3x10@4
-    notes: |
-      Mount the felt supports onto the platform with 4 screws.
-
-  "06": # TODO: confirm whether to renumber the split steps
-    add:
-      - wheel_rc_d52@2
-      - screw_pan_m4x8@2
-
       - deck_asm_uno@1
+
+  "06":
+    add:
       - screw_csk_m3x8@4
-    notes: |
-      Mount the wheels onto the couplers with 2 screws.
-      Attach the deck and fix it with 4 screws.
 
   "07":
     add:
       - wire_power@1
-    notes: |
-      Connect the power module to the motor shield.
+    to: motor_shield
 
   "08":
     add:
       - wire_jga25@2
-    notes: |
-      Connect the motor-encoder connectors to the motor shield.
+    to: motor_shield
 
-  "09": # TODO: consider splitting into 4 steps (line sensors / sharp assembly, wiring)
+  "09":
     add:
       - iarduino_tcrt5000@2
       - nut_hex_m3@2
       - screw_pan_m3x10@2
-      
+  
+  "10":
+    add:
       - wire_dupont_3p@2
+    to: analog_ports
 
+  "11":
+    add:
       - sharp_asm@1
       - screw_pan_m3x10@1
 
+  "12":
+    add:
       - wire_jst_3p@1
-    notes: |
-      Mount the line sensors and connect them to the motor shield.
-      Mount the sharp assembly and connect it to the motor shield.
+    to: analog_port
+
+
+botix_advanced(platform_asm_for_advanced):
+  "00":
+    add:
+      - side_wall_asm@2
+    note: |
+      Left and right side walls, mirrored.
+
+  "01":
+    add:
+      - screw_csk_m3x8@2
+  
+  "02":
+    add:
+      - deck_asm_esp32@1
+  
+  "03":
+    add:
+      - screw_csk_m3x8@4
+  
+  "04":
+    add:
+      - wire_power@1
+    to: motor_drivers
+
+  "05":
+    add:
+      - wire_jga25@2
+    to: motor_drivers

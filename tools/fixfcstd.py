@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
+# Botix - https://github.com/KiraFlux/botix
 # FIXME: Generated via LLM!
 
 """

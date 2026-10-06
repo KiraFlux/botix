@@ -125,6 +125,13 @@ Registry of parts, tools and consumables used in the Botix project.
   <td>m3, hex</td>
 </tr>
 <tr>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/washer_m3.jpg" width="150"></td>
+  <td><a id="washer_m3"></a><code>washer_m3</code></td>
+  <td>fastener</td>
+  <td>iso 7089</td>
+  <td>m3, metal, flat</td>
+</tr>
+<tr>
   <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_csk_m3x8.jpg" width="150"></td>
   <td><a id="screw_csk_m3x8"></a><code>screw_csk_m3x8</code></td>
   <td>fastener</td>
