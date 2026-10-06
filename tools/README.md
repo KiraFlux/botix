@@ -14,4 +14,6 @@ Automation scripts for the Botix monorepo.
 
 Scripts in this directory are licensed under **GPL‑3.0‑or‑later** – see [LICENSE](LICENSE).
 
-This `README.md` is part of the documentation and is licensed under [CC BY‑SA 4.0](../../docs/LICENSE).
+This `README.md` is part of the documentation and is licensed under [CC BY‑SA 4.0](../docs/LICENSE).
+
+For the complete licensing information of all project components, refer to [LICENSE.md](../LICENSE.md).

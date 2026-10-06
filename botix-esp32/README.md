@@ -246,4 +246,4 @@ This README file is part of the project documentation and is licensed under [CC 
 
 The firmware source code in this directory (`botix-esp32/`) is licensed under **GNU General Public License v3.0 or later** – see the [LICENSE](LICENSE) file for the full text.
 
-For the complete licensing information of all project components, refer to the [root repository README](../README.md#repository-structure--licensing).
+For the complete licensing information of all project components, refer to [LICENSE.md](../LICENSE.md).

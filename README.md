@@ -259,17 +259,15 @@ Found a bug? Have an idea? Open an Issue or submit a Pull Request.
 
 ## Repository Structure & Licensing
 
-| Path                  | License                                 | Description                                        |
-| --------------------- | --------------------------------------- | -------------------------------------------------- |
-| **Any Markdown file** | [CC BY-SA 4.0](docs/LICENSE)            | Overview, documentation                            |
-| `docs/`               | [CC BY-SA 4.0](docs/LICENSE)            | Project documentation.                             |
-| `docs/assets/`        | [CC BY-SA 4.0](docs/LICENSE)            | Images, photos, and renders used in documentation. |
-| `cadref/`             | [CERN-OHL-S-2.0](cadref/LICENSE)        | External models of purchased components.           |
-| `mcad/`               | [CERN-OHL-S-2.0](mcad/LICENSE)          | Project parts and assemblies in FreeCAD.           |
-| `ecad/`               | [CERN-OHL-S-2.0](ecad/LICENSE)          | PCB sources in KiCad.                              |
-| `botix-esp32/`        | [GPL-3.0-or-later](botix-esp32/LICENSE) | Advanced ESP32 firmware source.                    |
-| `tools/`              | [GPL-3.0-or-later](tools/LICENSE)       | Automation scripts.                                |
+| Path           | Description                                   |
+| :------------- | :-------------------------------------------- |
+| `docs/`        | Project documentation.                        |
+| `cadref/`      | Reference CAD models of purchased components. |
+| `mcad/`        | Project parts and assemblies in FreeCAD.      |
+| `ecad/`        | PCB sources in KiCad.                         |
+| `botix-esp32/` | Advanced ESP32 firmware source.               |
+| `tools/`       | Automation scripts.                           |
 
 </div>
 
-> Full texts of all licenses are provided in the respective directories.
+> See [LICENSE.md](LICENSE.md) for licensing details.

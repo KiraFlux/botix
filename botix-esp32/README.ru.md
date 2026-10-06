@@ -248,4 +248,4 @@ flowchart TB
 
 Исходный код прошивки в этом каталоге (`botix-esp32/`) распространяется под **GNU General Public License v3.0 or later** — полный текст см. в файле [LICENSE](LICENSE).
 
-Полную информацию о лицензиях всех компонентов проекта см. в [README корневого репозитория](../README.md#repository-structure--licensing).
+Полную информацию о лицензиях всех компонентов проекта см. в [LICENSE.md](../LICENSE.md).

@@ -32,4 +32,4 @@ This README is licensed under [CC BY‑SA 4.0](../docs/LICENSE).
 
 The hardware design files in `ecad/` are licensed under [CERN‑OHL‑S‑2.0](LICENSE).
 
-For the complete licensing information of all project components, refer to the [root repository README](../README.md#repository-structure--licensing).
+For the complete licensing information of all project components, refer to [LICENSE.md](../LICENSE.md).
