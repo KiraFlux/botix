@@ -118,42 +118,42 @@ Registry of parts, tools and consumables used in the Botix project.
   <td>printed</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fasteners/nut_hex_m3.jpg" width="150"></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/nut_hex_m3.png" width="150"></td>
   <td><a id="nut_hex_m3"></a><code>nut_hex_m3</code></td>
   <td>fastener</td>
   <td>iso 4032</td>
   <td>m3, hex</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fasteners/washer_m3.jpg" width="150"></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/washer_m3.png" width="150"></td>
   <td><a id="washer_m3"></a><code>washer_m3</code></td>
   <td>fastener</td>
   <td>iso 7089</td>
   <td>m3, metal, flat</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_csk_m3x8.jpg" width="150"></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_csk_m3x8.png" width="150"></td>
   <td><a id="screw_csk_m3x8"></a><code>screw_csk_m3x8</code></td>
   <td>fastener</td>
   <td>iso 7046</td>
   <td>m3 × 8, countersunk, phillips</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_csk_m3x20.jpg" width="150"></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_csk_m3x20.png" width="150"></td>
   <td><a id="screw_csk_m3x20"></a><code>screw_csk_m3x20</code></td>
   <td>fastener</td>
   <td>iso 7046</td>
   <td>m3 × 20, countersunk, phillips</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_pan_m3x10.jpg" width="150"></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_pan_m3x10.png" width="150"></td>
   <td><a id="screw_pan_m3x10"></a><code>screw_pan_m3x10</code></td>
   <td>fastener</td>
   <td>iso 7045</td>
   <td>m3 × 10, pan head, phillips</td>
 </tr>
 <tr>
-  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_pan_m4x8.jpg" width="150"></td>
+  <td style="padding: 0;"><img src="assets/catalog/fasteners/screw_pan_m4x8.png" width="150"></td>
   <td><a id="screw_pan_m4x8"></a><code>screw_pan_m4x8</code></td>
   <td>fastener</td>
   <td>iso 7045</td>

@@ -4,15 +4,23 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Botix - https://github.com/KiraFlux/botix
 
+"""Render OBJ meshes to images via POV-Ray."""
+
 import argparse
-from abc import ABC, abstractmethod
-from dataclasses import dataclass
-from itertools import chain
 import json
 import math
-from pathlib import Path
 import subprocess
-from typing import Any, Callable, ClassVar, Final, Iterable, Mapping, Optional, Self, Sequence, TextIO
+import sys
+
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from functools import cache
+from itertools import chain, starmap
+from pathlib import Path
+from typing import (
+    Any, Callable, ClassVar, Final, Iterable,
+    Mapping, Optional, Self, Sequence, TextIO,
+)
 
 
 @dataclass(frozen=True)
@@ -97,7 +105,7 @@ class Color(Vector3f):
     @classmethod
     def from_hex(cls, _hex: str) -> Self:
         if len(_hex) == 7 and _hex[0] == "#":
-            return cls(*map(lambda i: int(_hex[i:i+2], base=16) / 255, range(1, len(_hex), 2)))
+            return cls(*map(lambda i: int(_hex[i:i + 2], base=16) / 255, range(1, len(_hex), 2)))
 
         raise ValueError(f"{_hex} not a valid HEX color format")
 
@@ -145,7 +153,7 @@ class PovObject(ABC):
 
     @abstractmethod
     def write_pov(self, pov: TextIO) -> None:
-        """write object as POV render format"""
+        """Write object as POV render format."""
         raise NotImplementedError
 
 
@@ -267,9 +275,9 @@ class AreaLight(PovObject):
         v2 = Vector3f(0, self.config.size / 2, 0)
         pov.write(f"area_light {v1.pov_str()}, {v2.pov_str()}, {self.config.samples}, {self.config.samples}\n")
 
-        pov.write(f"adaptive 1\n")
-        pov.write(f"jitter\n")
-        pov.write(f"fade_power 0\n")
+        pov.write("adaptive 1\n")
+        pov.write("jitter\n")
+        pov.write("fade_power 0\n")
 
         pov.write("}\n")
 
@@ -395,7 +403,11 @@ class SceneBuilder:
         solids = (
             Solid(
                 mesh=self.mesh,
-                transformation=Solid.Transformation(translate=-center, rotate=Vector3f.zero(), scale=Vector3f.one()),
+                transformation=Solid.Transformation(
+                    translate=-center,
+                    rotate=Vector3f.zero(),
+                    scale=Vector3f.one(),
+                ),
                 material=self.config.solid_material,
                 pigment_color=self.config.solid_pigment_color,
             ),
@@ -416,9 +428,9 @@ class SceneBuilder:
 @dataclass(frozen=True, kw_only=True)
 class RenderJob:
 
-    obj_file: Path
+    obj_files: tuple[Path, ...]
     work_dir: Path
-    project_name: str
+    project_name: Optional[str]
     resolution: int
     dry_run: bool
     verbose: bool
@@ -486,57 +498,151 @@ class RenderJob:
     @classmethod
     def from_cli(cls, argv: Optional[Sequence[str]] = None) -> Self:
         parser = argparse.ArgumentParser(
-            description="Render a part from OBJ via POV-Ray.",
+            description="Render parts from OBJ via POV-Ray.",
         )
 
-        parser.add_argument("obj", type=Path, metavar="OBJ")
-        parser.add_argument("--dry-run", action="store_true")
-        parser.add_argument("-o", "--out", type=Path, default=Path.cwd(), metavar="DIR")
-        parser.add_argument("-n", "--name", type=str, default=None, metavar="NAME")
-        parser.add_argument("-r", "--resolution", type=int, default=1024, metavar="N")
-        parser.add_argument("-b", "--background", type=str, default="#000000", metavar="#RRBBGG")
-        parser.add_argument("-p", "--default-pigment", type=str, default="#ffffff", metavar="#RRBBGG")
-        parser.add_argument("-v", "--verbose", action="store_true")
-        parser.add_argument("--views", type=str, default="all", metavar="LIST")
-        parser.add_argument("--fov", type=float, default=30, metavar="DEG")
-        parser.add_argument("--lights-file", type=Path, default=None, metavar="FILE")
-        parser.add_argument("--material-file", type=Path, default=None, metavar="FILE")
-        parser.add_argument("--views-file", type=Path, default=None, metavar="FILE")
+        parser.add_argument(
+            "obj",
+            type=Path,
+            nargs="+",
+            metavar="OBJ",
+            help="one or more source Wavefront OBJ meshes "
+                 "(shell wildcards are expanded by the shell, not by this tool)",
+        )
+        parser.add_argument(
+            "--dry-run",
+            action="store_true",
+            help="print output file names only, do not render",
+        )
+        parser.add_argument(
+            "-o", "--out",
+            type=Path,
+            default=Path.cwd(),
+            metavar="DIR",
+            help="output directory (default: current directory)",
+        )
+        parser.add_argument(
+            "-n", "--name",
+            type=str,
+            default=None,
+            metavar="NAME",
+            help="project name (default: OBJ file stem); "
+                 "only valid with a single OBJ",
+        )
+        parser.add_argument(
+            "-r", "--resolution",
+            type=int,
+            default=1024,
+            metavar="N",
+            help="image size N x N pixels (default: %(default)s)",
+        )
+        parser.add_argument(
+            "-b", "--background",
+            type=str,
+            default="#ffffff",
+            metavar="#RRGGBB",
+            help="background color (default: %(default)s)",
+        )
+        parser.add_argument(
+            "-p", "--default-pigment",
+            type=str,
+            default="#c5c5c5",
+            metavar="#RRGGBB",
+            help="default solid pigment color (default: %(default)s)",
+        )
+        parser.add_argument(
+            "-v", "--verbose",
+            action="store_true",
+            help="print POV-Ray stdout and stderr",
+        )
+        parser.add_argument(
+            "--views",
+            type=str,
+            default="all",
+            metavar="LIST",
+            help="comma-separated view names, or 'all' (default: %(default)s)",
+        )
+        parser.add_argument(
+            "--fov",
+            type=float,
+            default=30,
+            metavar="DEG",
+            help="camera field of view in degrees (default: %(default)s)",
+        )
+        parser.add_argument(
+            "--lights-file",
+            type=Path,
+            default=None,
+            metavar="FILE",
+            help="JSON file overriding the default light descriptions",
+        )
+        parser.add_argument(
+            "--material-file",
+            type=Path,
+            default=None,
+            metavar="FILE",
+            help="JSON file overriding the default solid material",
+        )
+        parser.add_argument(
+            "--views-file",
+            type=Path,
+            default=None,
+            metavar="FILE",
+            help="JSON file overriding the default view set",
+        )
 
         ns = parser.parse_args(argv)
 
-        def get_entries[T](views_file: Optional[Path], default: T) -> T:
-            if views_file is None:
+        if ns.name is not None and len(ns.obj) > 1:
+            parser.error("--name is only valid with a single OBJ")
+
+        def get_entries[T](entry_file: Optional[Path], default: T) -> T:
+            if entry_file is None:
                 return default
 
-            if not views_file.exists():
-                parser.error(f"{views_file=!s} not exists.")
+            if not entry_file.exists():
+                parser.error(f"{entry_file} does not exist")
 
-            with views_file.open("r") as f:
+            with entry_file.open("r") as f:
                 return json.load(f)
 
-        def selected_views(active_view_set: Mapping[str, SceneBuilder.View.Entry], names: Iterable[str]) -> Sequence[SceneBuilder.View]:
+        def selected_views(
+            active_view_set: Mapping[str, SceneBuilder.View.Entry],
+            names: Iterable[str],
+        ) -> Sequence[SceneBuilder.View]:
             names = tuple(active_view_set.keys() if "all" in names else names)
 
             if unknown := tuple(filter(lambda n: n not in active_view_set, names)):
-                parser.error(f"unknown view(s): {', '.join(unknown)}. Available: {', '.join(active_view_set.keys())}")
+                parser.error(
+                    f"unknown view(s): {', '.join(unknown)}. "
+                    f"Available: {', '.join(active_view_set.keys())}"
+                )
 
-            return tuple(map(lambda n: SceneBuilder.View.from_entry(n, active_view_set[n]), names))
+            return tuple(map(
+                lambda n: SceneBuilder.View.from_entry(n, active_view_set[n]),
+                names,
+            ))
 
         return cls(
-            obj_file=ns.obj.resolve(),
+            obj_files=tuple(p.resolve() for p in ns.obj),
             work_dir=ns.out.resolve(),
-            project_name=ns.name or ns.obj.stem,
+            project_name=ns.name,
             resolution=ns.resolution,
             dry_run=ns.dry_run,
             verbose=ns.verbose,
             scene_builder=SceneBuilder.Config(
                 view_fov=ns.fov,
                 view_margin=1.05,
-                views=selected_views(get_entries(ns.views_file, cls._default_views_set), tuple(filter(None, map(str.strip, ns.views.split(","))))),
+                views=selected_views(
+                    get_entries(ns.views_file, cls._default_views_set),
+                    tuple(filter(None, map(str.strip, ns.views.split(",")))),
+                ),
 
                 light_distance_factor=2.0,
-                light_descriptions=tuple(map(AreaLight.Description.from_entry, get_entries(ns.lights_file, cls._default_light_descriptions))),
+                light_descriptions=tuple(map(
+                    AreaLight.Description.from_entry,
+                    get_entries(ns.lights_file, cls._default_light_descriptions),
+                )),
 
                 scene_config=Scene.Config(
                     assumed_gamma=2.2,
@@ -545,67 +651,94 @@ class RenderJob:
                     max_trace_level=10,
                 ),
 
-                solid_material=Solid.Material.from_entry(get_entries(ns.material_file, cls._default_solid_material)),
+                solid_material=Solid.Material.from_entry(
+                    get_entries(ns.material_file, cls._default_solid_material),
+                ),
                 solid_pigment_color=Color.from_hex(ns.default_pigment),
             ),
         )
 
+    def render_view(
+        self,
+        project_name: str,
+        get_builder: Callable[[], SceneBuilder],
+        index: int,
+        view: SceneBuilder.View,
+    ) -> bool:
+        """Render a single view; return True on success."""
 
-def main() -> int:
-    job = RenderJob.from_cli()
+        total = len(self.scene_builder.views)
 
-    _maybe_builder: Optional[SceneBuilder] = None
+        filename = project_name
+        if total > 1:
+            filename += f"_{view.name}"
 
-    def build_scene(view_position: SpherePosition) -> Scene:
-        nonlocal _maybe_builder
-        if _maybe_builder is None:
-            with open(job.obj_file, "r") as f:
-                _maybe_builder = SceneBuilder(config=job.scene_builder, mesh=Mesh.from_obj(f))
-        return _maybe_builder.build(view_position)
-
-    total_renders = len(job.scene_builder.views)
-    failed_renders = 0
-
-    for i, view in enumerate(job.scene_builder.views):
-        stem = job.work_dir / f"{job.project_name}_{view.name}"
+        stem = self.work_dir / filename
         pov_file = stem.with_suffix(".pov")
 
-        if job.dry_run:
+        if self.dry_run:
             print(pov_file.stem)
-            continue
+            return True
 
-        print(f"[{i + 1}/{total_renders}]: {view.name}")
+        print(f"[{index + 1}/{total}]: {view.name}")
 
         print("Building scene.")
-        scene = build_scene(view.position)
+        scene = get_builder().build(view.position)
 
         print(f"Writing {pov_file}.")
-
         with pov_file.open("w") as f:
             scene.write_pov(f)
 
         print("Rendering.")
-        r = subprocess.run((
-            "povray",
-            f"+W{job.resolution}", f"+H{job.resolution}",
-            "+A", "+AM2", "+R3",
-            f"+I{pov_file}", f"+O{stem}",
-            "+L/usr/share/povray-3.7/include",
-        ), capture_output=True, text=True, timeout=300)
+        r = subprocess.run(
+            (
+                "povray",
+                f"+W{self.resolution}", f"+H{self.resolution}",
+                "+A", "+AM2", "+R3",
+                f"+I{pov_file}", f"+O{stem}",
+                "+L/usr/share/povray-3.7/include",
+            ),
+            capture_output=True,
+            text=True,
+            timeout=300,
+        )
 
         print(f"Render complete: {stem.name}.png")
 
-        if job.verbose:
+        if self.verbose:
             print(r.stdout)
             print(r.stderr)
 
         if 0 != r.returncode:
             print(r.stderr)
-            failed_renders += 1
 
         pov_file.unlink()
 
-    return 0 if (failed_renders == 0) else 1
+        return r.returncode == 0
+
+    def on_object(self, obj_file: Path) -> bool:
+        """Render every selected view for one OBJ; return True if all succeeded."""
+
+        project_name = self.project_name or obj_file.stem
+
+        print(f"source: {obj_file}")
+
+        @cache
+        def get_builder() -> SceneBuilder:
+            with obj_file.open("r") as f:
+                return SceneBuilder(config=self.scene_builder, mesh=Mesh.from_obj(f))
+
+        results = tuple(starmap(
+            lambda i, v: self.render_view(project_name, get_builder, i, v),
+            enumerate(self.scene_builder.views),
+        ))
+
+        return all(results)
+
+    def run(self) -> bool:
+        """Render every selected view for every source OBJ; return True if all succeeded."""
+
+        return all(map(self.on_object, self.obj_files))
 
 
-exit(main())
+sys.exit(0 if RenderJob.from_cli().run() else 1)

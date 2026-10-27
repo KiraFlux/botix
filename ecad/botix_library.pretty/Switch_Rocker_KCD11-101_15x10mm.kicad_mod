@@ -1,0 +1,159 @@
+(footprint "Switch_Rocker_KCD11-101_15x10mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "U1"
+		(at 0 -12.0904 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "e6869379-5c5e-4a88-a05e-b6aacc8686fe")
+		(effects
+			(font
+				(size 0.9144 0.9144)
+				(thickness 0.1524)
+			)
+			(justify left top)
+		)
+	)
+	(property "Value" "Switch_Rocker_KCD11-101_15x10mm"
+		(at 0 -13.8684 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "53a9ed68-2e62-448f-a5ab-28d8e78b68a5")
+		(effects
+			(font
+				(size 0.9144 0.9144)
+				(thickness 0.1524)
+			)
+			(justify left top)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d6bc8089-8459-4fdf-9491-fe127993cb77")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "40f116ec-51ab-464b-aa96-01c6ded5200c")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "JLC_3DModel" "37ae437f4d904dac99f8e6871352c350"
+		(at 0 0 0)
+		(layer "Cmts.User")
+		(hide yes)
+		(uuid "8d2a2890-4562-4d38-9a4f-052e18afb237")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "JLC_3D_Size" "21.2 15.1"
+		(at 0 0 0)
+		(layer "Cmts.User")
+		(hide yes)
+		(uuid "974e9272-37fb-47db-bd1b-97866a6d049e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts
+			(xy -5 6.5) (xy -4 7.5) (xy 4 7.5) (xy 5 6.5) (xy 5 -6.5) (xy 4 -7.5) (xy -4 -7.5) (xy -5 -6.5)
+		)
+		(stroke
+			(width 0.5)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "f650557b-35af-41ef-b310-872d5ec56269")
+	)
+	(fp_rect
+		(start -5 -7.5)
+		(end 5 7.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "01c5c498-d757-42e6-976c-2b4266473343")
+	)
+	(fp_circle
+		(center 7.5499 10.6002)
+		(end 7.5799 10.6002)
+		(stroke
+			(width 0.06)
+			(type default)
+		)
+		(fill no)
+		(layer "User.5")
+		(uuid "dd6fd728-9798-4884-8b86-2d66abd2bdc8")
+	)
+	(fp_text user "KCD11-101"
+		(at 0 -4 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "68095af3-a9d3-40bb-bb8f-9a2123bec1fb")
+		(effects
+			(font
+				(size 1 1)
+				(bold yes)
+			)
+		)
+	)
+	(pad "1" thru_hole oval
+		(at 0 0 270)
+		(size 3 6.2)
+		(drill oval 1 4.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.05)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "b423f478-4b2b-4529-85f2-9d1c2f4c60a4")
+	)
+	(pad "2" thru_hole oval
+		(at 0 5.25 270)
+		(size 3 6.2)
+		(drill oval 1 4.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.05)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "c3574ad2-ee70-467d-a8d1-eccae6ebd53a")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/EASYEDA_MODELS/SW-TH_KCD1-101.step"
+		(offset
+			(xyz -0.0003 -0.0152 -7)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -270)
+		)
+	)
+)
